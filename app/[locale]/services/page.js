@@ -14,9 +14,9 @@ export default async function ServicePage({ params }) {
         _id,
         name
       }
-    }`
+    }`,
+    { cache: 'no-store' }
   );
-
   // Fetch only categories that have at least one service
   const categories = await client.fetch(
     `*[_type == "serviceCategory" && count(*[_type == "service" && references(^._id)]) > 0]{
@@ -24,6 +24,8 @@ export default async function ServicePage({ params }) {
       name
     }`
   );
+
+
 
   return (
     <div>

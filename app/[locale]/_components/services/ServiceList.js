@@ -29,6 +29,9 @@ export default function ServiceList({ services, categories, locale }) {
     ? services.filter((service) => service.category._id === selectedCategory)
     : services;
 
+    console.log("Services", services)
+    console.log("CATEGORIES", categories)
+
   return (
     <div className="h-auto w-full px-4 bg-white">
       <div className="flex flex-col h-full w-full max-w-[1440px] mx-auto py-36 gap-5">
