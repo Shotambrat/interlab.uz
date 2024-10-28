@@ -51,17 +51,18 @@ function Main({ params }) {
     const fetchDoctors = async () => {
       try {
         const doctorsData = await client.fetch(
-          `*[_type == "doctor" && isActive == true][0...4]{
-            name,
-            slug,
-            position,
-            photo {
-              asset->{
-                _id,
-                url
-              }
-            }
-          }`
+          `*[_type == "doctor" && isActive == true && defined(order)]
+| order(order asc)[0...4]{
+  name,
+  slug,
+  position,
+  photo {
+    asset->{
+      _id,
+      url
+    }
+  }
+}`
         );
         setDoctors(doctorsData);
       } catch (error) {

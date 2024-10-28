@@ -5,12 +5,7 @@ import { client } from "@/sanity/lib/client";
 
 export default async function HomePage({ params }) {
   // Fetching doctor data from Sanity
-  const doctors = await client.fetch(`*[_type == "doctor" ] {
-    name,
-    slug,
-    photo,
-    position,
-  }`);
+  const doctors = await client.fetch(`*[_type == "doctor" ]`, { cache: 'no-store' });
 
   return (
     <div>
