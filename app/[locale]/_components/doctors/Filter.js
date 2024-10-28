@@ -35,6 +35,8 @@ export default function Filter({ doctors, locale }) {
     }
   };
 
+  console.log('Filtered', doctors);
+
   return (
     <div className="w-full h-auto bg-white max-mdl:px-4 pb-24 pt-12">
       <div className="w-full max-w-[1440px] mx-auto h-auto flex flex-col gap-10">

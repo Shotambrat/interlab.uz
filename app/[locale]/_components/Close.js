@@ -9,7 +9,7 @@ function Logo() {
         src={search}
         width={10}
         height={10}
-        alt="The Wild Oasis logo"
+        alt="Interlab innovation"
         quality={100}
       />
     </button>

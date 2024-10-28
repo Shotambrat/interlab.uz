@@ -23,7 +23,7 @@ export default function SuccessResult({ setState }) {
             src={closeicongray}
             width={100}
             height={100}
-            alt="The Wild Oasis logo"
+            alt="Interlab innovation"
             quality={100}
           />
         </button>

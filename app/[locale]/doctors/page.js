@@ -9,7 +9,7 @@ export default async function HomePage({ params }) {
     name,
     slug,
     photo,
-    position
+    position,
   }`);
 
   return (

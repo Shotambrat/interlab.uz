@@ -139,5 +139,10 @@ export default {
       of: [{ type: 'reference', to: [{ type: 'service' }] }],
       description: 'Выберите услуги, которые предоставляет врач',
     },
+    {
+      name: 'order',
+      type: 'number',
+      title: "Порядковый номер",
+    }
   ],
 };

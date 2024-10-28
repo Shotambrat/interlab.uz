@@ -10,7 +10,7 @@ function Logo() {
           src={logo}
           width={220}
           height={150}
-          alt="The Wild Oasis logo"
+          alt="Interlab Innovation"
           quality={100}
         />
       </div>
@@ -20,7 +20,7 @@ function Logo() {
           src={logo}
           width={130}
           height={70}
-          alt="The Wild Oasis logo"
+          alt="Interlab innovation"
           quality={100}
         />
       </div>

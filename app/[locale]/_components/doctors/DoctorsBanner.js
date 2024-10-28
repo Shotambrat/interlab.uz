@@ -24,7 +24,7 @@ export default function ServiceBanner({ locale }) {
               src={doctorsBanner}
               width={1000}
               height={1000}
-              alt="The Wild Oasis logo"
+              alt="Interlab innovation"
               quality={100}
             />
           </div>
@@ -36,7 +36,7 @@ export default function ServiceBanner({ locale }) {
             src={doctorsBanner}
             width={1000}
             height={1000}
-            alt="The Wild Oasis logo"
+            alt="Interlab innovation"
             quality={100}
           />
         </div>

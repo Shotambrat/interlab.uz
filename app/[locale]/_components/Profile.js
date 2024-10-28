@@ -11,7 +11,7 @@ function Profile() {
         src={profile}
         width={25}
         height={25}
-        alt="The Wild Oasis logo"
+        alt="Interlab innovation"
         quality={100}
         className="my-auto"
       />
