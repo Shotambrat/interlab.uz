@@ -39,7 +39,7 @@ const Slider = ({ params }) => {
             backgroundPhoto,
             navigateToUrl,
             buttonText
-          }`);
+          }`, { cache: 'no-store' });
         setBanners(banners);
       } catch (error) {
         console.error("Ошибка при загрузке баннеров:", error);
@@ -161,7 +161,7 @@ const Slider = ({ params }) => {
                   exit="exit"
                   transition="transition"
                   variants={slideAnimation}
-                  className="flex flex-col items-center self-stretch mt-2 mdl:mt-5 max-md:max-w-full"
+                  className="flex flex-col items-start self-stretch mt-2 mdl:mt-5 max-md:max-w-full"
                 >
                   <h2 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-bold max-md:max-w-full lg:leading-12">
                     <PortableText
