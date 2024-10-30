@@ -15,28 +15,28 @@ const data = [
     id: 2,
     title: "Широкий спектр анализов",
     description: `Наша лаборатория предлагает обширный набор исследований, включая биохимические, клинические, микробиологические и генетические анализы, чтобы удовлетворить все ваши потребности в диагностике.`,
-    image: "/images/about-banner.png",
+    image: "/images/IMG_8388ff.png",
     number: "02",
   },
   {
     id: 3,
     title: "Квалифицированный персонал",
     description: `Наша команда состоит из высококвалифицированных специалистов, обладающих богатым опытом в области лабораторной диагностики, которые обеспечивают надежность и точность результатов.`,
-    image: "/images/about-banner.png",
+    image: "/images/IMG_8423.png",
     number: "03",
   },
   {
     id: 4,
     title: "Эффективное обслуживание",
     description: `Мы стремимся к максимальному удобству для наших пациентов, предлагая оперативную обработку анализов и удобные способы получения результатов.`,
-    image: "/images/about-banner.png",
+    image: "/images/shutterstock_2148946241-1-scaled.jpg",
     number: "04",
   },
   {
     id: 5,
     title: "Доступность и прозрачность",
     description: `Мы заботимся о своих пациентах, предоставляя ясную информацию о ценах и сроках выполнения анализов, а также обеспечивая доступность услуг для всех.`,
-    image: "/images/about-banner.png",
+    image: "/images/7dc600f826964efb966d3a3dd1d694bf.png",
     number: "05",
   },
   // Добавляйте больше элементов по необходимости
@@ -72,7 +72,7 @@ export default function WhyWe() {
               height={1000}
               quality={100}
               alt={`Banner ${data[currentIndex].title}`}
-              className="w-full h-full object-cover rounded-3xl"
+              className="w-full h-full object-cover rounded-3xl max-h-[500px]"
             />
           </motion.div>
         </AnimatePresence>
