@@ -49,7 +49,7 @@ export default function Instructions() {
               ref={videoRef}
               className="w-full max-mdx:h-[400px] h-[700px]"
               controls
-              poster="/images/about-banner.png"
+              poster="/images/photo_2024-10-30_10-21-23.jpg"
             >
               <source src="/vide-huck.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -73,12 +73,12 @@ export default function Instructions() {
             )}
           </div>
 
-          <a
+          {/* <a
             href="#!"
             className="text-red-400 text-xl font-semibold underline block"
           >
             {t('how-get-online')}
-          </a>
+          </a> */}
         </div>
       </div>
     </div>
