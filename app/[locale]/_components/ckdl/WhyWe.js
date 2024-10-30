@@ -30,14 +30,14 @@ const data = [
     title: "Эффективное обслуживание",
     description: `Мы стремимся к максимальному удобству для наших пациентов, предлагая оперативную обработку анализов и удобные способы получения результатов.`,
     image: "/images/about-banner.png",
-    number: "03",
+    number: "04",
   },
   {
     id: 5,
     title: "Доступность и прозрачность",
     description: `Мы заботимся о своих пациентах, предоставляя ясную информацию о ценах и сроках выполнения анализов, а также обеспечивая доступность услуг для всех.`,
     image: "/images/about-banner.png",
-    number: "03",
+    number: "05",
   },
   // Добавляйте больше элементов по необходимости
 ];
@@ -111,12 +111,7 @@ export default function WhyWe() {
       <div className="flex-1 lg:min-h-[500px] flex flex-col justify-between items-start">
         <div>
           <h2 className="text-4xl max-mdx:text-2xl font-semibold">
-            {data[currentIndex].title.split(" ").map((word, index) => (
-              <span key={index}>
-                {word}
-                <br />
-              </span>
-            ))}
+            {data[currentIndex].title}
           </h2>
           <p className="w-full max-w-[500px] text-xl max-mdx:text-base text-[#5B5B5B]">
             {data[currentIndex].description}
