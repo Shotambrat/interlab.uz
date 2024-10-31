@@ -8,16 +8,15 @@ import axios from "axios";
 import useClickOutside from "@/hooks/useClickOutside";
 import { createPortal } from "react-dom";
 
-
 export default function HouseCall({ setState }) {
-  const [phone, setPhone] = useState(""); // State for phone input
-  const [isValidPhone, setIsValidPhone] = useState(false); // Phone validation state
-  const [loading, setLoading] = useState(false); // State for form submission
-  const modalRef = useRef(null)
+  const [phone, setPhone] = useState("");
+  const [isValidPhone, setIsValidPhone] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const modalRef = useRef(null);
+  const [form] = Form.useForm();
 
   const handlePhoneChange = (value, country, e, formattedValue) => {
     setPhone(value);
-    // Validate the phone number length based on the selected country
     if (formattedValue.length === country.format.length) {
       setIsValidPhone(true);
     } else {
@@ -31,12 +30,12 @@ export default function HouseCall({ setState }) {
       return;
     }
 
-    setLoading(true); // Start loading state
+    setLoading(true);
 
     const payload = {
       name: values.fullname,
       phone: phone,
-      birthDate: values.birthDate.format("DD.MM.YYYY"), // Date of birth
+      birthDate: values.birthDate.format("DD.MM.YYYY"),
       comment: values.comment,
     };
 
@@ -56,16 +55,18 @@ export default function HouseCall({ setState }) {
       }
     } catch (error) {
       message.error("Произошла ошибка при отправке. Попробуйте позже.");
-      setLoading(false); // Stop loading state
+      setLoading(false);
     }
   };
 
-  const [form] = Form.useForm(); // Create form instance
-  useClickOutside(modalRef, () => setState(false))
+  useClickOutside(modalRef, () => setState(false));
 
-  return createPortal (
+  return createPortal(
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-60 z-[9999]">
-      <div ref={modalRef} className="bg-white max-md:p-4 px-8 py-8 rounded-3xl shadow-lg max-mdx:max-h-[90%] no-scrollbar overflow-y-scroll max-mdx:w-[90%] w-[450px] relative">
+      <div
+        ref={modalRef}
+        className="bg-white max-md:p-4 px-8 py-8 rounded-3xl shadow-lg max-mdx:max-h-[90%] no-scrollbar overflow-y-scroll max-mdx:w-[90%] w-[450px] relative"
+      >
         <button
           className="absolute top-5 right-5"
           onClick={() => setState(false)}
@@ -126,7 +127,7 @@ export default function HouseCall({ setState }) {
                 />
               </Form.Item>
 
-              {/* Date of birth picker */}
+              {/* Updated DatePicker with getPopupContainer */}
               <Form.Item
                 name="birthDate"
                 rules={[{ required: true, message: "К какой дате желаете вызов?" }]}
@@ -135,6 +136,7 @@ export default function HouseCall({ setState }) {
                   placeholder="К какой дате желаете вызов?"
                   format="DD.MM.YYYY"
                   className="rounded-xl input py-2 text-xl w-full border border-gray-300 shadow-sm"
+                  getPopupContainer={(trigger) => trigger.parentNode}
                 />
               </Form.Item>
 
