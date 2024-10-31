@@ -14,7 +14,7 @@ export default function Page({params}) {
     <div className="w-full flex flex-col gap-48 bg-white pb-48">
       <Banner />
       <div className="w-full max-w-[1440px] mx-auto">
-      <section className="mt-52 max-md:mt-24 w-full">
+      <section className="max-md:mt-24 w-full">
             <div className="flex gap-5 flex-col lg:flex-row max-md:gap-0 ">
               <h2 className="text-3xl font-bold lg:hidden block text-neutral-900 max-md:max-w-full">
                 {t("Main.About.title")}
@@ -52,7 +52,7 @@ export default function Page({params}) {
                     {t("Main.About.more")}
                   </a>
                   <a
-                    href={`/${params.locale}/about/licenses`}
+                    href={`/${params.locale}/about/licences`}
                     className="justify-center items-center px-16 py-4 text-red-400 whitespace-nowrap border border-red-400 border-solid rounded-[100px] max-md:px-10 font-bold"
                   >
                     {t("Main.About.license")}
@@ -64,7 +64,7 @@ export default function Page({params}) {
       </div>
       <Profits />
       <PriceCut />
-      <Calculator />
+      {/* <Calculator /> */}
       <div className="w-full max-w-[1440px] mx-auto">
       <Application />
 

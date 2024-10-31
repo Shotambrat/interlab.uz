@@ -41,7 +41,7 @@ export default function AddressItem({
               {tel}
             </a>
           </div>
-          <a href={url} className="flex gap-3 items-center text-neutral-400">
+          {/* <a href={url} className="flex gap-3 items-center text-neutral-400">
             Подробнее
             <Image
               src={arrowRight}
@@ -50,7 +50,7 @@ export default function AddressItem({
               alt="Arrow right icon gray"
               className="h-3 w-3"
             />
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

@@ -14,9 +14,9 @@ export default function Banner() {
         <p className="w-full max-w-[400px] leading-5">
           {t("subtitle")}
         </p>
-        <button className="mt-4 py-3 px-4 rounded-full text-white bg-red-400 font-semibold">
+        {/* <button className="mt-4 py-3 px-4 rounded-full text-white bg-red-400 font-semibold">
           {t("button")}
-        </button>
+        </button> */}
       </div>
       <div className="absolute max-slg:relative h-[500px] slg:h-full w-full max-slg:px-4 slg:w-1/2 top-0 right-0">
         <Image
