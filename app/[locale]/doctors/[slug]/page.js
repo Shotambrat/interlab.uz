@@ -20,7 +20,7 @@ export default async function DoctorPage({ params }) {
         category->{name}
       }
     }`, 
-    { slug }
+    { slug }, { cache: 'no-store' }
   );
 
   if (!doctor) {
