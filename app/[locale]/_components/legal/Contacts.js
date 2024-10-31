@@ -48,9 +48,9 @@ export default function Contacts() {
               }
             }}
             className="text-2xl font-medium"
-            href="tel:+998971504747"
+            href="tel:+998977578822"
           >
-            +998 (97) 150 47 47
+            +998 (97) 757 88 22
           </a>
           <p className="text-neutral-400">{t("phone-for-call")} 1</p>
         </div>

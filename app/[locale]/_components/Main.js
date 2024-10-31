@@ -203,6 +203,27 @@ function Main({ params }) {
                         998 (78) 148 22 88
                       </a>
                     </div>
+                    <div className="md:text-2xl text-lg text-neutral-900 font-medium max-md:max-w-full">
+                      3){" "}
+                      <a
+                        onClick={async () => {
+                          try {
+                            let response = await fetch(
+                              "https://interlab.mrjtrade.uz/api/count?button=call",
+                              {
+                                method: "POST",
+                              }
+                            );
+                            console.log("Response Of Count", response.json());
+                          } catch (error) {
+                            console.log("error to counter fetching", error);
+                          }
+                        }}
+                        href="tel:+998977578822"
+                      >
+                        998 (97) 757 88 22
+                      </a>
+                    </div>
                     <div className="md:text-xl text-sm text-zinc-500 max-md:max-w-full">
                       {t("Main.ContactUs.phone-for-call")}
                     </div>
