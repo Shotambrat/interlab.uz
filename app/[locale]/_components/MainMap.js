@@ -755,7 +755,7 @@ export default function Map() {
     if (!ymaps || !mapRef.current) return;
 
     // Удаляем предыдущий маркер пользователя, если он есть
-    console.log("USerPlaceMark", userPlacemarkRef)
+    console.log("USerPlaceMark", userPlacemarkRef);
     if (userPlacemarkRef.current) {
       mapRef.current.geoObjects.remove(userPlacemarkRef.current);
     }
@@ -887,6 +887,45 @@ export default function Map() {
     <div className="w-full relative mt-24">
       <div className="w-full max-w-[1440px] relative mx-auto flex flex-col gap-8">
         <h1 className="text-3xl font-semibold">Карта пунктов</h1>
+
+        <div className="w-full py-1 px-1 bg-slate-100 flex relative rounded-2xl lg:hidden">
+          <motion.div
+            initial={false}
+            animate={{ x: isMap ? 0 : "100%" }}
+            transition={{
+              type: "spring",
+              stiffness: 500,
+              damping: 30,
+              bounce: 0.25,
+            }}
+            className="relative py-6 h-full w-1/2 bg-whit
+            e rounded-xl"
+          ></motion.div>
+          <button
+            onClick={() => setIsMap(true)}
+            className="absolute top-0 left-0 h-full w-1/2 flex items-center justify-center rounded-xl"
+          >
+            <p
+              className={`z-10 h-full text-xl absolute top-0 w-full flex items-center justify-center transition-colors duration-300 ease-in-out ${
+                isMap ? "text-red-400 font-semibold " : "text-neutral-400"
+              }`}
+            >
+              Карта
+            </p>
+          </button>
+          <button
+            onClick={() => setIsMap(false)}
+            className="absolute top-0 right-0 h-full w-1/2 flex items-center justify-center rounded-xl"
+          >
+            <p
+              className={`z-10 h-full text-xl absolute top-0 w-full flex items-center justify-center transition-colors duration-300 ease-in-out ${
+                !isMap ? "text-red-400 font-semibold " : "text-neutral-400"
+              }`}
+            >
+              Список
+            </p>
+          </button>
+        </div>
         {/* Остальной JSX код */}
         <div className="relative w-full flex max-lg:flex-col-reverse gap-5">
           <div className="flex flex-col gap-4 max-lg:hidden overflow-y-scroll h-[725px] w-1/3">
