@@ -156,7 +156,7 @@ export default function ServiceList({ services, categories, locale }) {
           {t("Licencies.blogs")}
         </h2>
         <Blog locale={locale} />
-        <button className="flex gap-2 justify-center items-center self-center px-10 py-3.5 mt-9 text-base font-bold text-center text-red-400 border border-red-400 border-solid rounded-[100px] max-md:px-5">
+        <a href={`/${locale}/blogs`} className="flex gap-2 justify-center items-center self-center px-10 py-3.5 mt-9 text-base font-bold text-center text-red-400 border border-red-400 border-solid rounded-[100px] max-md:px-5">
           <span className="my-auto">{t("Blog.other")}</span>
           <Image
             src={arrowRightRed}
@@ -166,7 +166,7 @@ export default function ServiceList({ services, categories, locale }) {
             quality={100}
             className="h-4 w-auto"
           />
-        </button>
+        </a>
       </div>
     </div>
   );
