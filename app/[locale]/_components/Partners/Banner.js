@@ -7,9 +7,10 @@ export default function Banner() {
 
   return (
     <div className="w-full h-screen relative max-slg:gap-5 flex flex-col pt-10">
-      <div className="absolute max-slg:relative slg:top-1/3 left-4 lg:left-[7%] flex flex-col items-start gap-4">
+      <div className="absolute max-slg:relative slg:top-1/4 left-4 lg:left-[7%] flex flex-col items-start gap-4">
         <h1 className="text-5xl font-bold w-full max-w-[500px]">
-          {t("title")} <span className="text-rose-400">Intermed Innovation</span>
+        <span className="text-rose-400">Партнёрство с Interlab:</span>
+          {t("title")}
         </h1>
         <p className="w-full max-w-[400px] leading-5">
           {t("subtitle")}
