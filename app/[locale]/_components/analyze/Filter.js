@@ -6,6 +6,7 @@ import FilterAnalyzeItems from "./FilterAnalyzeItems";
 import { client } from "@/sanity/lib/client";
 import { Select, Spin } from 'antd'; // Spin для индикатора загрузки
 import { DownOutlined } from '@ant-design/icons';
+import axios from "axios";
 
 export default function Filter({ params }) {
   const { locale } = params;
@@ -15,6 +16,32 @@ export default function Filter({ params }) {
   const [loadingCategories, setLoadingCategories] = useState(true); // Состояние загрузки категорий
   const [loadingTests, setLoadingTests] = useState(false); // Состояние загрузки тестов
 
+  useEffect(() => {
+    const fetchDataOfApi = async () => {
+      axios.post('http://192.168.150.12:6746/api/v1/Entegrasyon/Login', {
+        "userName": "INTERMED",
+        "password": "IN12TER34MED56",
+        "language": 1
+      })
+      .then(response => {
+        console.log("Token", response.data.accessToken);
+      })
+      .catch(error => {
+        if (error.response) {
+          // Сервер ответил с кодом, отличным от 2xx
+          console.error("Ошибка с ответом сервера:", error.response.data);
+        } else if (error.request) {
+          // Запрос был отправлен, но ответа не получено
+          console.error("Запрос был отправлен, но ответа не получено:", error.request);
+        } else {
+          // Произошла другая ошибка при настройке запроса
+          console.error("Ошибка:", error.message);
+        }
+      });
+    };
+  
+    fetchDataOfApi();
+  })
   // Загружаем категории
   useEffect(() => {
     const fetchCategories = async () => {
