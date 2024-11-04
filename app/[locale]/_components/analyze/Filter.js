@@ -27,7 +27,7 @@ export default function Filter({ params }) {
           host: '213.230.91.55',
           port: 8080 // Замените на порт прокси, если требуется
         }
-      })
+      } )
       .then(response => {
         console.log("Token", response.data.accessToken);
       })
