@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import FilterCategory from "@/app/[locale]/_components/analyze/FilterCategory";
 import FilterAnalyzeItems from "./FilterAnalyzeItems";
-import { client } from "@/sanity/lib/client";
 import { Select, Spin } from 'antd'; // Spin для индикатора загрузки
 import { DownOutlined } from '@ant-design/icons';
 import axios from "axios";
@@ -13,100 +12,57 @@ export default function Filter({ params }) {
   const [categories, setCategories] = useState([]);
   const [activeCategory, setActiveCategory] = useState(null);
   const [tests, setTests] = useState([]);
+  const [filteredTests, setFilteredTests] = useState([]);
   const [loadingCategories, setLoadingCategories] = useState(true); // Состояние загрузки категорий
   const [loadingTests, setLoadingTests] = useState(false); // Состояние загрузки тестов
 
   useEffect(() => {
     const fetchDataOfApi = async () => {
-      axios.post('http://192.168.150.12:6746/api/v1/Entegrasyon/Login', {
-        "userName": "INTERMED",
-        "password": "IN12TER34MED56",
-        "language": 1
-      },{
-        proxy: {
-          host: '213.230.91.55',
-          port: 8080 // Замените на порт прокси, если требуется
-        }
-      } )
-      .then(response => {
-        console.log("Token", response.data.accessToken);
-      })
-      .catch(error => {
-        if (error.response) {
-          // Сервер ответил с кодом, отличным от 2xx
-          console.error("Ошибка с ответом сервера:", error.response.data);
-        } else if (error.request) {
-          // Запрос был отправлен, но ответа не получено
-          console.error("Запрос был отправлен, но ответа не получено:", error.request);
-        } else {
-          // Произошла другая ошибка при настройке запроса
-          console.error("Ошибка:", error.message);
-        }
-      });
-    };
-  
-    fetchDataOfApi();
-  })
-  // Загружаем категории
-  useEffect(() => {
-    const fetchCategories = async () => {
-      setLoadingCategories(true); // Включаем состояние загрузки категорий
       try {
-        const categoriesData = await client.fetch(`
-          *[_type == "testCategory"]{
-            _id,
-            name,
-            slug
-          }
-        `);
-        setCategories(categoriesData);
-        if (categoriesData.length > 0) {
-          setActiveCategory(categoriesData[0].slug.current); // Устанавливаем первую категорию как активную
+        // Отправляем запрос на серверный обработчик для получения данных анализов
+        setLoadingTests(true);
+        const response = await axios.post('/api/proxy', {
+          userName: 'INTERMED',
+          password: 'IN12TER34MED56',
+          language: 1
+        });
+
+        const testsData = response.data.data; // Доступ к массиву данных через поле data
+        console.log('TESTS:', testsData);
+        setTests(testsData);
+
+        // Извлекаем уникальные категории из полученных данных
+        const uniqueCategories = [...new Set(testsData.map(test => test.testSectionName))];
+        setCategories(uniqueCategories);
+
+        // Устанавливаем первую категорию как активную и фильтруем анализы
+        if (uniqueCategories.length > 0) {
+          setActiveCategory(uniqueCategories[0]);
+          setFilteredTests(testsData.filter(test => test.testSectionName === uniqueCategories[0]));
         }
+
+        setLoadingCategories(false);
+        setLoadingTests(false);
       } catch (error) {
-        console.error("Ошибка при загрузке категорий:", error);
-      } finally {
-        setLoadingCategories(false); // Отключаем состояние загрузки категорий
+        console.error('Ошибка при получении данных анализов:', error);
+        setLoadingCategories(false);
+        setLoadingTests(false);
       }
     };
-    fetchCategories();
+
+    fetchDataOfApi();
   }, []);
 
-  // Загружаем тесты при изменении активной категории
-  useEffect(() => {
-    const fetchTests = async () => {
-      if (!activeCategory) return;
-      setLoadingTests(true); // Включаем состояние загрузки тестов
-      try {
-        const testsData = await client.fetch(
-          `*[_type == "test" && category->slug.current == $categorySlug]{
-            _id,
-            name,
-            shortDescription,
-            price,
-            slug
-          }`,
-          { categorySlug: activeCategory }
-        );
-        setTests(testsData);
-      } catch (error) {
-        console.error("Ошибка при загрузке анализов:", error);
-      } finally {
-        setLoadingTests(false); // Отключаем состояние загрузки тестов
-      }
-    };
-    fetchTests();
-  }, [activeCategory]);
-
   // Функция переключения категории
-  const handleFilter = (categorySlug) => {
-    setActiveCategory(categorySlug);
+  const handleFilter = (category) => {
+    setActiveCategory(category);
+    setFilteredTests(tests.filter(test => test.testSectionName === category));
   };
 
   // Для мобильной версии формируем массив категорий для селекта
   const mobileCategoryOptions = categories.map(category => ({
-      value: category.slug.current,
-      label: category.name[locale] || category.name.ru
+    value: category,
+    label: category
   }));
 
   return (
@@ -116,13 +72,13 @@ export default function Filter({ params }) {
         {/* Desktop version of categories */}
         <div className="w-full mdl:max-w-1/3 mdl:w-1/3 flex flex-col gap-3 h-auto max-mdl:hidden">
           {loadingCategories ? (
-            <Spin size="large" /> // Индикатор загрузки категорий
+            <Spin size="large" /> // Индикатор загрузки
           ) : (
             categories.map((category) => (
               <FilterCategory
-                key={category._id}
-                title={category.name[locale]}
-                catname={category.slug.current}
+                key={category}
+                title={category}
+                catname={category}
                 handleFilter={handleFilter}
                 active={activeCategory}
               />
@@ -165,13 +121,14 @@ export default function Filter({ params }) {
           {loadingTests ? (
             <Spin size="large" /> // Индикатор загрузки тестов
           ) : (
-            tests.map((test) => (
+            filteredTests.map((test) => (
               <FilterAnalyzeItems
-                key={test._id}
-                title={test.name[locale]}
-                shortDescription={test.shortDescription[locale]}
-                price={test.price}
-                slug={test.slug?.current}
+                key={test.id}
+                title={test.testName}
+                shortDescription={test.shortDescription || "Описание отсутствует"}
+                price={test.fee}
+                slug={test.testId} // Используем testId для формирования ссылки
+                locale={locale}
               />
             ))
           )}
