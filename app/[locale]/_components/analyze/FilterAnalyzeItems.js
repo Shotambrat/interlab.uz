@@ -8,8 +8,8 @@ export default function FilterAnalyzeItems({
   locale,
 }) {
   return (
-    <div className="w-full flex flex-col gap-5">
-      <div className="flex justify-between items-start">
+    <div className="w-full flex flex-col gap-5 max-mdx:gap-2">
+      <div className="flex justify-between items-start max-mdx:flex-col max-mdx:gap-4">
         <div className="flex flex-col gap-4">
           <h2 className="text-xl font-bold">{title}</h2>
           {/* {shortDescription ? (

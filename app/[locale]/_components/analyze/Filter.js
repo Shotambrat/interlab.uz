@@ -15,11 +15,11 @@ export default function Filter({ params }) {
   const [filteredTests, setFilteredTests] = useState([]);
   const [loadingCategories, setLoadingCategories] = useState(true); // Состояние загрузки категорий
   const [loadingTests, setLoadingTests] = useState(false); // Состояние загрузки тестов
+  const [isSelectOpen, setIsSelectOpen] = useState(false); // Состояние для отслеживания открытия Select
 
   useEffect(() => {
     const fetchDataOfApi = async () => {
       try {
-        // Отправляем запрос на серверный обработчик для получения данных анализов
         setLoadingTests(true);
         const response = await axios.post('/api/proxy', {
           userName: 'INTERMED',
@@ -28,7 +28,6 @@ export default function Filter({ params }) {
         });
 
         const testsData = response.data.data; // Доступ к массиву данных через поле data
-        console.log('TESTS:', testsData);
         setTests(testsData);
 
         // Извлекаем уникальные категории из полученных данных
@@ -57,6 +56,16 @@ export default function Filter({ params }) {
   const handleFilter = (category) => {
     setActiveCategory(category);
     setFilteredTests(tests.filter(test => test.testSectionName === category));
+  };
+
+  // Обработка открытия/закрытия выпадающего меню
+  const handleDropdownVisibleChange = (open) => {
+    setIsSelectOpen(open);
+    if (open) {
+      document.body.style.overflow = 'hidden'; // Блокируем прокрутку страницы
+    } else {
+      document.body.style.overflow = ''; // Возвращаем прокрутку страницы
+    }
   };
 
   // Для мобильной версии формируем массив категорий для селекта
@@ -96,6 +105,7 @@ export default function Filter({ params }) {
               className='custom-select'
               options={mobileCategoryOptions}
               onChange={value => handleFilter(value)}
+              onDropdownVisibleChange={handleDropdownVisibleChange} // Отслеживаем изменение видимости выпадающего списка
               suffixIcon={<DownOutlined style={{ color: 'white' }} />} // Белая стрелка
               style={{
                 backgroundColor: '#FB6A68', // Красный фон
