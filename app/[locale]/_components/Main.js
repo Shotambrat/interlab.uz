@@ -404,7 +404,7 @@ function Main({ params }) {
             />
           </a> */}
           <div className="max-w-[1440px] mx-auto px-2 w-full">
-            <div className="flex flex-col mt-24 mdx:mt-52 max-w-full w-[588px]">
+            <div className="flex flex-col mt-24 max-w-full w-[588px]">
               <h2 className="text-3xl mdx:text-4xl font-bold text-neutral-900 max-md:max-w-full mb-0">
                 {t("Main.Doctors.title")}
               </h2>
@@ -466,9 +466,9 @@ function Main({ params }) {
               </a>
             </div>
           </div>
-          <div className="mt-24 w-full px-2 max-w-[1440px] mx-auto">
+          {/* <div className="mt-24 w-full px-2 max-w-[1440px] mx-auto">
             <PopularAnalyze params={params} />
-          </div>
+          </div> */}
           <div className="mt-52 max-md:mt-24 px-2 w-full max-w-[1440px] mx-auto">
             <Instruction locale={locale} />
           </div>

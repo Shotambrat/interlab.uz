@@ -58,8 +58,8 @@ export default function About() {
               </div>
               <div className="flex flex-col items-center lg:items-end justify-center py-6">
                 <p className="text-6xl font-bold max-mdx:text-5xl max-mdx:leading-5 leading-6 my-auto">
-                  100к+ <br />
-                  <span className="text-gray-500 text-lg font-medium max-mdx:text-sm">довольных пациентов</span>
+                  90+ <br />
+                  <span className="text-gray-500 text-lg font-medium max-mdx:text-sm">пунктов</span>
                 </p>
               </div>
             </div>
