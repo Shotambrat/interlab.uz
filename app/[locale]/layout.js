@@ -26,6 +26,21 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={locale}>
       <body>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-9VBC3WC023"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9VBC3WC023');
+          `}
+        </Script>
+
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header locale={locale} />
           <CallToAction locale={locale} />
