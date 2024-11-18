@@ -16,7 +16,13 @@ export const metadata = {
   icons: {
     icon: '/favicon.ico'
   },
-  manifest: '/manifest.json'
+  manifest: '/manifest.json',
+  additionalMetaTags: [
+    {
+      name: 'yandex-verification',
+      content: '43684112d96a7229'
+    }
+  ]
 };
 
 export default async function LocaleLayout({ children, params }) {
