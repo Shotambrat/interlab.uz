@@ -143,29 +143,7 @@ const Menu = ({
                     >
                       <Search />
                     </button>
-                    {/* <a
-                  onClick={async () => {
-                    try {
-                      let response = await fetch("https://interlab.mrjtrade.uz/api/count?button=call", {
-                        method: "POST",
-                      });
-                      console.log("Response Of Count", response.json());
-                    } catch (error) {
-                      console.log("error to counter fetching", error);
-                    }
-                  }}
-                    className="block border p-[7px] rounded-full"
-                    href="tel:1156"
-                  >
-                    <Image
-                      priority
-                      src={phone}
-                      width={20}
-                      height={20}
-                      alt="Phone icon"
-                      quality={100}
-                    />
-                  </a> */}
+                    
                     <div onClick={closeMenu}>
                       <Close />
                     </div>

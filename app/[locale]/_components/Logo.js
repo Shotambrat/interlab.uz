@@ -14,7 +14,7 @@ function Logo() {
           quality={100}
         />
       </div>
-      <div className="flex mdx:hidden transition-all duration-150">
+      <div className="flex mdx:hidden transition-all duration-150 h-[45px]">
         <Image
           priority
           src={logo}
@@ -22,6 +22,7 @@ function Logo() {
           height={70}
           alt="Interlab innovation"
           quality={100}
+          className='object-cover w-full'
         />
       </div>
       

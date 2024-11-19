@@ -9,6 +9,7 @@ const inter = Inter({
 });
 
 export default function About() {
+
   return (
     <div className={`w-full px-2 py-12 bg-[#F8F9FB] ${inter.className}`}>
       <div className="w-full max-w-[1440px] mx-auto flex flex-col gap-8">
@@ -36,7 +37,7 @@ export default function About() {
               className="w-full rounded-3xl"
             />
             <div className="grid grid-cols-2 lg:grid-rows-1 grid-rows-2 lg:grid-cols-4 gap-0">
-              <div className="max-lg:border-b border-r lg:border-r-2 border-gray-300 flex flex-col lg:items-start items-center justify-center">
+              <div className="max-lg:border-b border-r lg:border-r-2 border-gray-300 flex flex-col lg:items-center items-center justify-center">
                 <p className="text-6xl max-mdx:text-5xl max-mdx:leading-5 font-bold leading-6  my-auto">
                   1000+ <br />
                   <span className="text-gray-500 text-lg max-mdx:text-sm font-medium">
@@ -45,21 +46,21 @@ export default function About() {
                 </p>
               </div>
               <div className="max-lg:border-b lg:border-r-2 border-gray-300 flex flex-col items-center justify-center">
-                <p className="text-6xl font-bold max-mdx:text-5xl max-mdx:leading-5 leading-6 my-auto">
+                <p className="text-6xl lg:text-center  font-bold max-mdx:text-5xl max-mdx:leading-5 leading-6 my-auto">
                   15 лет <br />
                   <span className="text-gray-500 text-lg font-medium max-mdx:text-sm">бесценного опыта</span>
                 </p>
               </div>
               <div className="lg:border-r-2 border-r border-gray-300 flex flex-col items-center justify-center">
-                <p className="text-6xl font-bold max-mdx:text-5xl max-mdx:leading-5 leading-6 my-auto">
+                <p className="text-6xl lg:text-center font-bold max-mdx:text-5xl max-mdx:leading-5 leading-6 my-auto">
                   50+ <br />
                   <span className="text-gray-500 text-lg font-medium max-mdx:text-sm">врачей в клинике</span>
                 </p>
               </div>
-              <div className="flex flex-col items-center lg:items-end justify-center py-6">
+              <div className="flex flex-col items-center lg:items-center justify-center py-6">
                 <p className="text-6xl font-bold max-mdx:text-5xl max-mdx:leading-5 leading-6 my-auto">
                   90+ <br />
-                  <span className="text-gray-500 text-lg font-medium max-mdx:text-sm">пунктов</span>
+                  <span className="text-gray-500 text-lg   font-medium max-mdx:text-sm">пунктов</span>
                 </p>
               </div>
             </div>

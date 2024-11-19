@@ -127,6 +127,7 @@ function Main({ params }) {
                       dangerouslySetInnerHTML={{
                         __html: formatText(t("Main.ContactUs.description")),
                       }}
+                      
                     />
                   </div>
                   <div className="hidden slg:flex gap-5 mt-11 max-w-full text-base font-bold text-center w-[466px] max-md:flex-wrap max-md:mt-10">
@@ -200,7 +201,7 @@ function Main({ params }) {
                         }}
                         href="tel:+998781482288"
                       >
-                        998 (78) 148 22 88
+                        998 78 148 22 88
                       </a>
                     </div>
                     <div className="md:text-2xl text-lg text-neutral-900 font-medium max-md:max-w-full">
@@ -221,7 +222,7 @@ function Main({ params }) {
                         }}
                         href="tel:+998977578822"
                       >
-                        998 (97) 757 88 22
+                        998 97 757 88 22
                       </a>
                     </div>
                     <div className="md:text-xl text-sm text-zinc-500 max-md:max-w-full">
