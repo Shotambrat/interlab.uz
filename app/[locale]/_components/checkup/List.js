@@ -1,8 +1,10 @@
+'use client'
 import { client } from "@/sanity/lib/client";
 import ListItem from "./ListItem";
 
 export default async function List({locale}) {
   const checkups = await client.fetch(`*[_type == "checkup"]`, { cache: 'no-store' });
+
 
   return (
     <div className="w-full max-w-[1440px] px-2 mx-auto flex flex-col gap-8 pt-8">

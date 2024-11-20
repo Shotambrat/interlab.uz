@@ -1,6 +1,8 @@
 // ListItem.js
 import React from "react";
 import { urlFor } from "@/sanity/lib/image";
+import Image from 'next/image';
+
 
 export default function ListItem({
   index,
@@ -36,21 +38,18 @@ export default function ListItem({
       <div
         style={{
           position: "absolute",
-          right: "1rem",
+         
           bottom: "-1rem",
-          shapeOutside: "inset(0)",
-          clipPath: "inset(0)",
         }}
-        className="flex-shrink-0 max-w-[120px]"
+        className="flex-shrink-0 max-w-[220px] h-[210px] right-[-10px]"
       >
-        <img
+        <Image
           src={urlFor(icon).url()}
           alt={title}
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "contain",
-          }}
+          width={300}
+          height={210}
+          quality={100}
+          className='w-full h-full object-cover'
         />
       </div>
     </a>

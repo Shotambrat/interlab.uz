@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { urlFor } from "@/sanity/lib/image";
 import OnlineReq from "@/app/[locale]/_components/Modals/OnlineReq";
 
-
 export default function Banner({ title, icon, description, color }) {
   const [onlineReq, setOnlineReq] = useState(false);
+
+
   return (
     <div
       style={{ backgroundColor: color }}
@@ -20,11 +21,11 @@ export default function Banner({ title, icon, description, color }) {
             Записаться
           </button>
         </div>
-        <div className="relative -bottom-8">
+        <div className="relative -bottom-8 lg:h-[376px]">
           <img
             src={urlFor(icon).url()}
             alt={title?.ru || title?.uz}
-            className="w-full h-full object-contain "
+            className="w-full h-full object-cover "
           />
         </div>
       </div>
