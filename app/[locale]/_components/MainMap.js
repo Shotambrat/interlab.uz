@@ -75,7 +75,7 @@ export default function Map() {
       const iconContent = {
         iconLayout: "default#image",
         iconImageHref: "/images/maps/geolocation.png",
-        iconImageSize: [50, 50],
+        iconImageSize: [40, 40],
         iconImageOffset: [-25, -27],
       };
   
@@ -269,19 +269,28 @@ export default function Map() {
 
 
   const handleLocationClick = (id, coords) => {
-    setActiveClinic(id)
-    if (mapRef.current) {
-      mapRef.current.setCenter(coords, 14, { duration: 300 })
-
-      mapRef.current.geoObjects.each(geoObject => {
-        const placemarkCoords = geoObject.geometry.getCoordinates()
-        if (placemarkCoords.toString() === coords.toString()) {
-          geoObject.balloon.open()
-        }
-      })
-    }
-  }
-
+    // Set the state to show the map view
+    setIsMap(true);
+  
+    // Ensure the map centers on the clicked location after the view changes
+    setTimeout(() => {
+      if (mapRef.current) {
+        mapRef.current.setCenter(coords, 14, { duration: 300 });
+  
+        // Open the balloon for the clicked location
+        mapRef.current.geoObjects.each((geoObject) => {
+          const placemarkCoords = geoObject.geometry.getCoordinates();
+          if (placemarkCoords.toString() === coords.toString()) {
+            geoObject.balloon.open();
+          }
+        });
+      }
+    }, 100); // Small delay to ensure the map is rendered before changing the center
+  
+    // Update the active clinic
+    setActiveClinic(id);
+  };
+  
   return (
     <div className='w-full relative mt-24'>
       <div className='w-full max-w-[1440px] relative mx-auto flex flex-col gap-8'>
