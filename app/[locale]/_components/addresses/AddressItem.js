@@ -8,6 +8,7 @@ export default function AddressItem({
   graphic,
   tel,
   url,
+  onClick
 }) {
   return (
     <div
@@ -41,8 +42,8 @@ export default function AddressItem({
               {tel}
             </a>
           </div>
-          {/* <a href={url} className="flex gap-3 items-center text-neutral-400">
-            Подробнее
+          <button onClick={onClick} className="flex gap-3 items-center text-neutral-400">
+            Подробнее  
             <Image
               src={arrowRight}
               width={100}
@@ -50,7 +51,7 @@ export default function AddressItem({
               alt="Arrow right icon gray"
               className="h-3 w-3"
             />
-          </a> */}
+          </button>
         </div>
       </div>
     </div>

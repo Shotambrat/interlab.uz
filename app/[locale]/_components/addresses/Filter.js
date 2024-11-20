@@ -4,7 +4,7 @@ import arrowDown from "@/public/svg/arrow-down-red.svg";
 import Image from "next/image";
 import ForPage from "./ForPage"
 
-export default function Filter({ clinicsLocations, sortedClinics , activeClinic}) {
+export default function Filter({ clinicsLocations, sortedClinics , activeClinic , onLocationClick}) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [visibleReviewsCount, setVisibleReviewsCount] = useState(3); // Default for mobile
 
@@ -48,6 +48,7 @@ export default function Filter({ clinicsLocations, sortedClinics , activeClinic}
                 tel={clinic.tel}
                 url="/"
                 className={clinic.id === activeClinic ? "bg-red-100" : ""}
+                onClick={() => onLocationClick(clinic.id, clinic.coords)}
               />
             ))
           : sortedClinics.slice(0, isExpanded ? sortedClinics.length : visibleReviewsCount).map((clinic, index) => (
@@ -59,6 +60,7 @@ export default function Filter({ clinicsLocations, sortedClinics , activeClinic}
                 tel={clinic.tel}
                 url="/"
                 className={clinic.id === activeClinic ? "bg-red-100" : ""}
+                onClick={() => onLocationClick(clinic.id, clinic.coords)}
               />
             ))}
       </div>
