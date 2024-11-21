@@ -37,9 +37,11 @@ const PriceCheckup = ({ price, discountPercentage }) => {
             </div>
           )}
         </div>
-        <p className='text-[16px] mdx:text-[20px] line-through text-[#FB6A68] font-bold mb-0'>
-          {price.toLocaleString()}
-        </p>
+        {discountPercentage && (
+          <p className='text-[16px] mdx:text-[20px] line-through text-[#FB6A68] font-bold mb-0'>
+            {price.toLocaleString()}
+          </p>
+        )}
 
         <button
           onClick={() => setOnlineReq(true)}
