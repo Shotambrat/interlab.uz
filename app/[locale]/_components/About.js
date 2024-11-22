@@ -16,7 +16,7 @@ export default function About() {
         <div className="flex gap-4 justify-between max-mdx:flex-col w-full">
           <div className="flex-1 flex items-center">
             <h3 className="text-5xl max-mdx:text-3xl font-semibold">
-              <span className="text-[#FB6A68]">Interlab — </span>cовременный{" "}
+              <span className="text-[#FB6A68]">INTERMED — </span>cовременный{" "}
               <br /> медицинский комплекс в Ташкенте
             </h3>
           </div>

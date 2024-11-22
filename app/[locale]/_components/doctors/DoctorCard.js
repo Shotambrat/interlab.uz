@@ -17,7 +17,7 @@ const DoctorCardMain = ({ name, specialty, imageSrc, slug, locale }) => {
         <div>
           {/* Оборачиваем только изображение и текст ссылкой */}
           <Link href={`/${locale}/doctors/${slug}`} className="block">
-            <div className="flex overflow-hidden relative flex-col rounded-3xl items-end px-16 pt-20 pb-3 w-full aspect-[0.84] max-md:pl-5">
+            <div className="flex overflow-hidden relative flex-col rounded-3xl items-end px-16 pt-20 pb-3 w-full aspect-[0.74] max-md:pl-5">
               <Image
                 src={imageSrc}
                 className="object-cover absolute inset-0 size-full"

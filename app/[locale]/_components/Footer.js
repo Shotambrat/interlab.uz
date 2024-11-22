@@ -104,7 +104,7 @@ function Footer({ locale }) {
                 locale={locale}
                 links={[
                   { title: t("Footer.for-legal"), url: "legal" },
-                  { title: t("Footer.preparation"), url: "instructions" },
+                  // { title: t("Footer.preparation"), url: "instructions" },
                   // { title: t("Footer.feedback"), url: "" },
                   { title: t("Footer.vacancy"), url: "vacancies" },
                 ]}

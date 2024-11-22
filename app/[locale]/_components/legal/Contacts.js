@@ -54,8 +54,8 @@ export default function Contacts() {
           </a>
           <p className="text-neutral-400">{t("phone-for-call")} 1</p>
         </div>
-        <hr />
-        <div className="flex flex-col gap-2 max-mdl:flex-1">
+        {/* <hr /> */}
+        {/* <div className="flex flex-col gap-2 max-mdl:flex-1">
           <a
             onClick={async () => {
               try {
@@ -76,7 +76,7 @@ export default function Contacts() {
             +998 (90) 966 23 68
           </a>
           <p className="text-neutral-400">{t("phone-for-call")} 2</p>
-        </div>
+        </div> */}
         <hr />
       </div>
       <a
