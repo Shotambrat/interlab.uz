@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
 import LicenseModal from "../Modals/LicenseModal";
-
+import { IoSearch } from "react-icons/io5";
 export default function List({ locale }) {
   const [modal, setModal] = useState(false);
   const [modalData, setModalData] = useState(null);
@@ -40,7 +40,7 @@ export default function List({ locale }) {
 
   return (
     <div className="w-full max-w-[1440px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-5">
-      {modal && <LicenseModal data={modalData} close={() => setModal(false)} />}
+      {/* {modal && <LicenseModal data={modalData} close={() => setModal(false)} />} */}
       {licenses.map((license, i) => (
         <div key={i} className="relative border-4 border-neutral-300">
           <Image
@@ -52,8 +52,10 @@ export default function List({ locale }) {
           />
           <button
             onClick={() => handleOpenModal(license)}
-            className="absolute inset-0 hover:bg-slate-500 transition-all duration-300 hover:bg-opacity-50"
-          ></button>
+            className="absolute inset-0 hover:bg-black flex items-center justify-center transition-all duration-300 hover:bg-opacity-50"
+          >
+            <IoSearch  className='2xl:text-[45px] text-white'/>
+          </button>
         </div>
       ))}
     </div>
