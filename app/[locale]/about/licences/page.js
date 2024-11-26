@@ -12,6 +12,7 @@ export default function Page({params}) {
       <Banner />
       <List />
       <Info />
+      
       <div className="w-full max-w-[1440px] px-2 mx-auto flex flex-col gap-8">
         <h2 className="text-4xl font-semibold">{t('title')}</h2>
         <Blog locale={params.locale} />

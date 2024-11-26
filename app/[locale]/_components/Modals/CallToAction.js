@@ -8,7 +8,7 @@ import ContactsIcon from '@mui/icons-material/Contacts';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import OnlineReq from "@/app/[locale]/_components/Modals/OnlineReq";
 import PhoneIcon from '@mui/icons-material/Phone';
-
+import { FaHospital } from 'react-icons/fa';
 export default function CallToAction({ locale }) {
   const [onlineReq, setOnlineReq] = useState(false);
 
@@ -18,6 +18,9 @@ export default function CallToAction({ locale }) {
 
   const handleLocationClick = () => {
     window.location.href = `/${locale}/addresses`;
+  };
+  const handleCkdlClick = () => {
+    window.location.href = `https://mkdl.interlab.uz/ru`;
   };
 
   const handleContactsClick = () => {
@@ -68,6 +71,18 @@ export default function CallToAction({ locale }) {
           <SpeedDialAction
             icon={<ContactsIcon sx={{ color: 'white' }} />}
             onClick={handleContactsClick}
+            FabProps={{
+              sx: {
+                backgroundColor: '#FB6A68',
+                '&:hover': {
+                  backgroundColor: '#FB6A68',
+                },
+              },
+            }}
+          />
+          <SpeedDialAction
+            icon={<FaHospital  className='text-white lg:w-[25px] lg:h-[25px]' />}
+            onClick={handleCkdlClick}
             FabProps={{
               sx: {
                 backgroundColor: '#FB6A68',

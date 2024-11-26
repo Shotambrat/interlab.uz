@@ -8,8 +8,9 @@ export default function Banner() {
     <div className="w-full bg-slate-100 relative items-center px-2">
       <div className="w-full max-w-[1440px] mx-auto flex max-lg:flex-col relative">
         <div className="flex flex-col gap-5 py-12 lg:py-20">
-          <h1 className="text-red-400 text-3xl lg:text-4xl font-bold w-full max-w-[600px]">
+          <h1 className="text-red-400 text-[32px] lg:text-4xl font-bold w-full max-w-[600px]">
             {t("title")}
+            <br  className='mdx:hidden'/>
             <span className="text-black">{t("subtitle")}</span>
           </h1>
           <p className="w-full max-w-[600px]">{t("description")}</p>
