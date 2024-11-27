@@ -12,7 +12,8 @@ import news from './news';
 import partnerReview from './partnerReview';
 import vacancy from './vacancy';
 import checkup from './checkup';
+import profit from './profit'
 
 export const schema = {
-  types: [banner, service, serviceCategory, blockContent, test, testCategory, promotion, doctor, instruction, license, news, partnerReview, vacancy, checkup],
+  types: [banner, service, serviceCategory, blockContent, test, testCategory, promotion, doctor, instruction, license, news, partnerReview, vacancy, checkup , profit],
 };

@@ -13,11 +13,10 @@ export default function Page({ params }) {
   return (
     <div className="w-full flex flex-col gap-48 bg-white pb-48">
       <Banner />
-      <About />
-
+      {/* <About /> */}
       <Profits />
       <PriceCut />
-      {/* <Calculator /> */}
+      <Calculator />
       <div className="w-full max-w-[1440px] mx-auto">
         <Application />
       </div>
