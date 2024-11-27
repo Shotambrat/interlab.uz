@@ -10,7 +10,7 @@ import CheckupOverview from '../../_components/checkup/CheckupOverview'
 import Similar from '../../_components/checkup/Similar'
 
 export default async function CheckupPage({ params }) {
-  const { slug } = params;
+  const { slug , locale } = params;
 
   // Fetch данных из Sanity
   const checkup = await client.fetch(
@@ -62,7 +62,7 @@ export default async function CheckupPage({ params }) {
       {stages && stages.length > 0 && <CheckupOverview stages={stages} />}
       <WhyWe />
       <div className="w-full max-w-[1440px] px-2 mx-auto">
-      <Instuction />
+      <Instuction locale={locale} />
 
       </div>
       <div className="w-full max-w-[1440px] px-2 mx-auto">

@@ -5,10 +5,11 @@ import Image from 'next/image'
 import Bottom from '../../../../public/bottom.png'
 import Top from '../../../../public/top.png'
 import OnlineReq from '@/app/[locale]/_components/Modals/OnlineReq'
+import { useLocale } from 'next-intl'
 
 const PriceCheckup = ({ price, discountPercentage }) => {
   const [onlineReq, setOnlineReq] = useState(false)
-
+  const locale = useLocale()
   const discountedPrice = discountPercentage
     ? Math.round(price - (price * discountPercentage) / 100)
     : price
@@ -25,10 +26,13 @@ const PriceCheckup = ({ price, discountPercentage }) => {
       {onlineReq && <OnlineReq setState={setOnlineReq} />}
       <div className='flex flex-col items-center justify-center py-[50px] mdx:py-[80px] lg:py-[100px]'>
         <p className='text-[15px] mdx:text-[16px] text-[#FB6A68] font-bold mb-0'>
-          Итоговая стоимость
+          
+          {locale === 'ru' ? 'Итоговая стоимость' : 'Umumiy Narx'}
+
         </p>
         <div className='text-[27px] lg:mt-[15px] lg:text-[60px] text-[#FB6A68] mdx:text-[48px] flex flex-row items-center gap-[8px] font-bold mt-[5px]'>
-          {discountedPrice} сум
+          
+          {discountedPrice}   {locale === 'ru' ? 'сум' : "so'm"}
           {discountPercentage && (
             <div className='bg-[#FFFFFF] lg:h-[42px] rounded-full py-[5px] px-[10px] flex items-center justify-center'>
               <p className='text-[15px] text-[#FB6A68] font-bold mb-0'>
@@ -47,7 +51,9 @@ const PriceCheckup = ({ price, discountPercentage }) => {
           onClick={() => setOnlineReq(true)}
           className='bg-[#FB6A68] mdx:mt-[40px] lg:py-[18px] mdx:w-[20%] rounded-full py-[14px] mt-[20px] px-[20px]'
         >
-          <p className='text-white font-bold mb-0'> Записаться </p>
+          <p className='text-white font-bold mb-0'>
+          {locale === 'ru' ? 'Записаться' : 'Bog`lanish'}
+              </p>
         </button>
       </div>
 

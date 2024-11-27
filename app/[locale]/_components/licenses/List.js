@@ -42,20 +42,21 @@ export default function List({ locale }) {
     <div className="w-full max-w-[1440px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-5">
       {/* {modal && <LicenseModal data={modalData} close={() => setModal(false)} />} */}
       {licenses.map((license, i) => (
-        <div key={i} className="relative border-4 border-neutral-300">
-          <Image
+        <div key={i} className="relative  border-4 border-neutral-300 ">
+             <Image
             src={license.photo?.asset?.url || "/placeholder.jpg"}
             width={500}
             height={500}
             alt={`License Image ${i}`}
-            className="w-full h-auto object-cover"
+            className="w-full  object-cover"
           />
-          <button
+         
+          {/* <button
             onClick={() => handleOpenModal(license)}
             className="absolute inset-0 hover:bg-black flex items-center justify-center transition-all duration-300 hover:bg-opacity-50"
           >
             <IoSearch  className='2xl:text-[45px] text-white'/>
-          </button>
+          </button> */}
         </div>
       ))}
     </div>

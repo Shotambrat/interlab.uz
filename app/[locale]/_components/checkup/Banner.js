@@ -2,10 +2,11 @@
 import React, { useState } from "react";
 import { urlFor } from "@/sanity/lib/image";
 import OnlineReq from "@/app/[locale]/_components/Modals/OnlineReq";
+import { useLocale } from 'next-intl'
 
 export default function Banner({ title, icon, description, color }) {
   const [onlineReq, setOnlineReq] = useState(false);
-
+  const locale = useLocale()
 
   return (
     <div
@@ -15,10 +16,10 @@ export default function Banner({ title, icon, description, color }) {
       {onlineReq && <OnlineReq setState={setOnlineReq} />}
       <div className="w-full px-2 flex justify-between items-center max-w-[1440px] mx-auto">
         <div className="text-left py-16 max-w-md">
-          <h1 className="text-5xl font-bold">{title?.ru || title?.uz}</h1>
-          <p className="mt-4 text-lg">{description?.ru || description?.uz}</p>
+          <h1 className="text-5xl font-bold">{title[locale]}</h1>
+          <p className="mt-4 text-lg">{description[locale]}</p>
           <button onClick={() => setOnlineReq(true)} className="mt-6 px-16 py-3 bg-white text-xl  text-black rounded-full">
-            Записаться
+          {locale === 'ru' ? 'Записаться' : 'Bog`lanish'}
           </button>
         </div>
         <div className="relative -bottom-8 lg:h-[376px]">

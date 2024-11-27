@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import ServiceItems from "./ServiceItem";
 import Application from "@/app/[locale]/_components/Application";
 import Blog from "@/app/[locale]/_components/Blog";
@@ -8,16 +8,19 @@ import arrowRightRed from "@/public/svg/arrow-right-red.svg";
 import { Select } from "antd";
 import { useTranslations } from "next-intl";
 import { DownOutlined } from "@ant-design/icons";
+import axios from 'axios';
 
-export default function ServiceList({ services, categories, locale }) {
+
+export default function ServiceList({ services, locale }) {
   const t = useTranslations();
 
   const [servicesOpen, setServicesOpen] = useState(false);
-
+  const [categories, setCategories] = useState([]); // Store category objects, not just strings
   const [selectedCategory, setSelectedCategory] = useState(null); // Default to "All services"
 
+  // Generate mobile category options
   const mobileCategory = [
-    { value: null, label: "Все услуги" }, // Опция "Все услуги"
+    { value: null, label: t("Services.all") }, // Option for "All services"
     ...categories.map((category) => ({
       value: category._id,
       label: category.name[locale] || category.name.ru,
@@ -25,12 +28,62 @@ export default function ServiceList({ services, categories, locale }) {
   ];
 
   // Filter services based on selected category
-  const filteredServices = selectedCategory || selectedCategory == "null"
+  const filteredServices = selectedCategory
     ? services.filter((service) => service.category._id === selectedCategory)
     : services;
 
-    console.log("Services", services)
-    console.log("CATEGORIES", categories)
+  useEffect(() => {
+    const fetchDataOfApi = async () => {
+      try {
+        const response = await axios.post('/api/proxy', {
+          userName: 'INTERMED',
+          password: 'IN12TER34MED56',
+          language: 2
+        });
+
+        const testsData = response.data.data;
+
+        // Exclude unwanted categories
+        const excludedCategories = [
+          'Терапевт', 'Невропатолог', 'Процедура', 'ЛОР'
+        ];
+        const filteredCategories = testsData.filter(
+          (test) => !excludedCategories.includes(test.testSectionName)
+        );
+
+        // Get unique categories and their names
+        const uniqueCategories = filteredCategories.reduce((acc, test) => {
+          if (!acc.some((category) => category.name === test.testSectionName)) {
+            acc.push({ _id: test.testSectionName, name: test.testSectionName });
+          }
+          return acc;
+        }, []);
+        
+        setCategories(uniqueCategories);
+
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      }
+    };
+
+    fetchDataOfApi();
+  }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <div className="h-auto w-full px-4 bg-white">
@@ -50,7 +103,7 @@ export default function ServiceList({ services, categories, locale }) {
               className={`px-4 py-3 rounded-full ${selectedCategory === category._id ? "bg-[#FB6A68] text-white" : "border border-[#E4E4E4]"}`}
               onClick={() => setSelectedCategory(category._id)}
             >
-              {category.name[locale] || category.name.ru}
+              {category.name || category.name}
             </button>
           ))}
         </div>
@@ -93,7 +146,6 @@ export default function ServiceList({ services, categories, locale }) {
               category={
                 service.category.name[locale] || service.category.name.ru
               }
-              url={`/services/${service.slug.current}`}
               locale={locale}
             />
           ))}
