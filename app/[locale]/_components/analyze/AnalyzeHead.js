@@ -16,10 +16,10 @@ export default function AnalyzeHead({ test, locale }) {
           </div> */}
           <div className="flex gap-3 flex-wrap text-sm">
             <button className="text-white bg-red-400 font-semibold rounded-full px-6 md:px-10 py-2">
-              Сдать из дома
+              {locale === 'ru' ? 'Сдать из дома': 'Uydan tahlil topshirish'}
             </button>
             <button className="border border-red-400 text-red-400 font-semibold rounded-full px-6 md:px-10 py-2">
-              Связаться
+              {locale === 'ru' ? 'Связаться': 'Bog`lanish'}
             </button>
           </div>
         </div>

@@ -6,11 +6,11 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/routing'
 import { clinicsLocations } from '@/app/constants/map'
+import { useLocale } from 'next-intl'
 
 export default function Map() {
   const YANDEX_API_KEY = process.env.NEXT_PUBLIC_YANDEX_API_KEY
   const [clinics, setClinics] = useState([])
-  const mapREF = useRef()
   const [userLocation, setUserLocation] = useState(null)
   const [isSearchButtonVisible, setIsSearchButtonVisible] = useState(true)
   const [activeClinic, setActiveClinic] = useState(null)
@@ -20,7 +20,7 @@ export default function Map() {
   const userPlacemarkRef = useRef(null)
   const routeRef = useRef(null)
   const clinicsPlacemarksRef = useRef([])
-
+  const locale = useLocale()
   useEffect(() => {
     const loadYMaps = () => {
       return new Promise((resolve, reject) => {
@@ -294,7 +294,11 @@ export default function Map() {
   return (
     <div className='w-full relative mt-24'>
       <div className='w-full max-w-[1440px] relative mx-auto flex flex-col gap-8'>
-        <h1 className='text-3xl font-semibold'>Карта пунктов</h1>
+        <h1 className='text-3xl font-semibold'>
+          
+          {locale === 'ru' ? 'Карта пунктов' : 'Punktlar xaritasi'}
+          
+          </h1>
 
         <div className='w-full py-1 px-1 bg-slate-100 flex relative rounded-2xl lg:hidden'>
           <motion.div
@@ -377,7 +381,8 @@ export default function Map() {
                 onClick={handleSearchClinics}
                 className='rounded-full px-4 py-3 bg-red-400 w-[320px] text-white shadow-md shadow-red-400 absolute top-4 left-4 z-10'
               >
-                Поиск ближайшей поликлиники
+          {locale === 'ru' ? 'Поиск ближайшей поликлиники' : 'Yaqin tibbiyot muassasasini topish'}
+                
               </button>
             )}
             <div className='w-full h-full absolute top-0 left-0 z-0 rounded-xl'>
@@ -428,7 +433,9 @@ export default function Map() {
         </div>
         <Link href={'/addresses'} className='w-full flex justify-center'>
           <div className='py-3 px-6 font-semibold border-red-400 text-red-400 border rounded-full flex items-center cursor-pointer gap-2'>
-            Посмотреть все
+            
+          {locale === 'ru' ? 'Посмотреть все' : 'Barchasini ko‘rish'}
+
             <Image
               src={arrowRightRed}
               width={100}
