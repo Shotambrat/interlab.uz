@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SwiperCore, { Navigation, Pagination } from "swiper";
+
 import Application from "@/app/[locale]/_components/Application";
 import Blog from "@/app/[locale]/_components/Blog";
 import DoctorCard from "@/app/[locale]/_components/DoctorsCardMain";
@@ -23,6 +24,9 @@ import { useTranslations } from "next-intl";
 import Sale from "@/app/[locale]/_components/Sale";
 import CallToAction from "./Modals/CallToAction";
 import About from "./About";
+
+
+
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -95,7 +99,6 @@ function Main({ params }) {
     fetchServices();
   }, []);
 
-  console.log("services Категории", serviceCategories);
   const getRandomColor = () => {
     const colors = ["#FFC0CB", "#ADD8E6", "#90EE90", "#FFD700", "#FFA07A"];
     return colors[Math.floor(Math.random() * colors.length)];

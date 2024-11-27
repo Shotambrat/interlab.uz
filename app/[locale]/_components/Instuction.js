@@ -277,7 +277,7 @@ export default function Instuction({ locale }) {
               <AccordionContent>
                 <div className='flex flex-col text-xl text-neutral-900 max-md:max-w-full'>
                   {item.description.map((des, index) => (
-                    <div className='flex gap-3 max-md:flex-wrap'>
+                    <div key={index} className='flex gap-3 max-md:flex-wrap'>
                       <img
                         loading='lazy'
                         src='https://cdn.builder.io/api/v1/image/assets/TEMP/b8a4a519adc50f3f6d8d43f3e1ee55e4119302abd9f9f6a2470d04580a67cf98?apiKey=e791e0f42eab4556ac944da69358f29b&'
