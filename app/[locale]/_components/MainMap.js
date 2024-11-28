@@ -322,7 +322,9 @@ export default function Map() {
                 isMap ? 'text-red-400 font-semibold ' : 'text-neutral-400'
               }`}
             >
-              Карта
+              
+          {locale === 'ru' ? 'Карта' : 'Xarita'}
+
             </p>
           </button>
           <button
@@ -334,7 +336,9 @@ export default function Map() {
                 !isMap ? 'text-red-400 font-semibold ' : 'text-neutral-400'
               }`}
             >
-              Список
+              
+          {locale === 'ru' ? 'Список' : 'Roʻyxat'}
+
             </p>
           </button>
         </div>

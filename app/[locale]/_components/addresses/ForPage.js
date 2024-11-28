@@ -2,7 +2,7 @@ import callIcon from "@/public/svg/call-icon-red.svg";
 import Image from "next/image";
 import arrowRight from "@/public/svg/arrow-right-gray.svg";
 
-export default function AddressItem({ title, address, graphic, tel, url , onClick }) {
+export default function AddressItem({ title, address, graphic, tel, url , onClick , locale }) {
 
   return (
     <div className="p-4 border rounded-2xl shadow-lg flex flex-col gap-8 max-xl:gap-0 justify-between flex-shrink-0 flex-grow-0 w-full mx-auto">
@@ -37,7 +37,7 @@ export default function AddressItem({ title, address, graphic, tel, url , onClic
             </a>
           </div>
           <button onClick={onClick} className="flex gap-3 items-center text-neutral-400">
-            Подробнее
+          {locale === 'ru' ? 'Подробнее' : 'Batafsil'}
             <Image
               src={arrowRight}
               width={100}

@@ -12,6 +12,7 @@ import tgbot from "@/public/svg/tgbot.svg";
 import closeicon from "@/public/svg/closeicon.svg";
 import OnlineReq from "@/app/[locale]/_components/Modals/OnlineReq";
 import useClickOutside from "@/hooks/useClickOutside";
+import { useLocale } from 'next-intl'
 
 const ContactButton = ({
   href,
@@ -23,6 +24,7 @@ const ContactButton = ({
   text,
   rightIcon,
 }) => (
+  
   <a
     href={href}
     onClick={onClick}
@@ -39,7 +41,6 @@ const ContactButton = ({
           alt={text}
         />
       </div>
-      {/* <p className={`${textColor} font-semibold text-lg`}>{text}</p> */}
       {text}
     </div>
     <div>
@@ -58,6 +59,7 @@ const ContactButton = ({
 export default function ContactWithUs({ setState }) {
   const [onlineReq, setOnlineReq] = useState(false);
   const modalRef = useRef(null)
+  const locale = useLocale()
 
   useClickOutside(modalRef, () => setState(false))
 
@@ -66,7 +68,12 @@ export default function ContactWithUs({ setState }) {
       {onlineReq ? <OnlineReq setState={setOnlineReq} /> : <></>}
       <div ref={modalRef} className="bg-white max-md:p-4 p-8 rounded-3xl shadow-lg max-mdx:w-[90%] w-[450px]">
         <div className="flex w-full justify-between items-center">
-          <h1 className="text-2xl font-semibold">Связаться с нами</h1>
+          <h1 className="text-2xl font-semibold">
+
+          {locale === 'ru'
+              ? 'Связаться с нами'
+              : 'Biz Bilan Bo`glanish'}
+          </h1>
           <button
             onClick={() => {
               setState(false);
@@ -78,7 +85,9 @@ export default function ContactWithUs({ setState }) {
               src={closeicon}
               width={100}
               height={100}
-              alt="Закрыть"
+              alt={locale === 'ru'
+                ? 'Закрыть'
+                : 'Yopish'}
               quality={100}
             />
           </button>
@@ -103,7 +112,9 @@ export default function ContactWithUs({ setState }) {
             bgColor="bg-rose-100"
             borderColor="border-rose-500"
             textColor="text-rose-500"
-            text="Позвонить"
+            text={locale === 'ru'
+              ? 'Позвонить'
+              : "Qo'ng'iroq qilish"}
             rightIcon={redIcon}
           />
           <ContactButton
@@ -112,7 +123,9 @@ export default function ContactWithUs({ setState }) {
             bgColor="bg-blue-100"
             borderColor="border-blue-500"
             textColor="text-blue-500"
-            text="Написать в Telegram"
+            text={locale === 'ru'
+              ? 'Написать в Telegram'
+              : "Telegramga Yozish"}
             rightIcon={blueIcon}
           />
           <ContactButton
@@ -121,7 +134,9 @@ export default function ContactWithUs({ setState }) {
             bgColor="bg-indigo-100"
             borderColor="border-indigo-500"
             textColor="text-indigo-500"
-            text="Оставить заявку"
+            text={locale === 'ru'
+              ? 'Оставить заявку'
+              : "Ariza qoldirish"}
             rightIcon={indigoIcon}
           />
           <ContactButton
@@ -131,7 +146,9 @@ export default function ContactWithUs({ setState }) {
             bgColor="bg-emerald-100"
             borderColor="border-emerald-500"
             textColor="text-emerald-500"
-            text="TG-бот"
+            text={locale === 'ru'
+              ? 'TG-бот'
+              : "TG-bot"}
             rightIcon={emberIcon}
           />
         </div>

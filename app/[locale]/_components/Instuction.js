@@ -250,7 +250,7 @@ export default function Instuction({ locale }) {
           </h2>
           <p className=' text-sm mdx:text-lg text-zinc-500 max-md:max-w-full leading-4'>
            
-            {locale === 'ru' ? ' В клинике Interlab вы можете заказать вызов на дом для сдачи анализов, без необходимости посещения клиники' : 'Interlab klinikasida siz klinikaga kelmasdan, tahlillar topshirish uchun uyingizga chaqiruv xizmatini buyurtma qilishingiz mumkin.'}
+            {locale === 'ru' ? ' В клинике INTERMED вы можете заказать вызов на дом для сдачи анализов, без необходимости посещения клиники' : 'INTERMED klinikasida siz klinikaga kelmasdan, tahlillar topshirish uchun uyingizga chaqiruv xizmatini buyurtma qilishingiz mumkin.'}
           </p>
           <p className=' text-sm mdx:text-lg text-[#FB6A68] max-md:max-w-full leading-4'>
            

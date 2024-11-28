@@ -16,7 +16,7 @@ export default function Banner({ locale }) {
         </h1>
         <div className="text-sm flex gap-2 md:gap-5 font-semibold max-md:flex-wrap max-md:w-[70%]">
           <a
-            href={`/${locale}/about/licenses`}
+            href={`/${locale}/about/licences`}
             className="px-4 py-3 text-white bg-red-400 rounded-full max-md:w-full max-md:flex max-md:justify-center"
           >
             {t("Results.sertificates")}

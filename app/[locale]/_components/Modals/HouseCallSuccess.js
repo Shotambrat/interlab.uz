@@ -1,16 +1,16 @@
 import successIcon from "@/public/images/house-call-success.png"
 import Image from "next/image";
 import closeicongray from "@/public/svg/closeicon-gray.svg";
+import { useLocale } from 'next-intl'
 
-export default function SuccessResult({ setState }) {
+export default function SuccessResult() {
+  const locale = useLocale()
+
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-60 z-50">
       <div className="bg-white max-md:p-4 px-8 py-8 rounded-3xl shadow-lg max-mdx:w-[320px] w-[450px] relative">
         <button
           className="absolute top-5 right-5"
-        //   onClick={() => {
-        //     setState(false);
-        //   }}
         >
           <Image
             priority
@@ -32,10 +32,17 @@ export default function SuccessResult({ setState }) {
             />
           <div className="flex flex-col text-center gap-1 px-8 lg:px-12">
             <h3 className="text-rose-400 max-md:text-2xl text-3xl font-semibold">
-              Спасибо!
+              
+              {locale === 'ru'
+              ? 'Спасибо!'
+              : 'Raxmat !'}
             </h3>
             <p className="text-neutral-400 text-sm ">
-              Ваша заявка получена. Вам перезвонят в течении 5 минут, для подтверждения записи
+              
+            {locale === 'ru'
+  ? 'Ваша заявка получена. Вам перезвонят в течении 5 минут, для подтверждения записи'
+  : 'Arizangiz qabul qilindi. Sizga 5 daqiqa ichida qayta qo\'ng\'iroq qilinadi, ro\'yxatni tasdiqlash uchun.'}
+
             </p>
           </div>
           <button

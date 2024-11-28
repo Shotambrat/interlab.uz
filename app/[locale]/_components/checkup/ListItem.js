@@ -31,7 +31,7 @@ export default function ListItem({
           
           className={`inline-block whitespace-nowrap self-start mt-4 px-12 py-3 bg-white font-semibold rounded-full`}
         >
-          Перейти →
+          {locale === 'ru' ? 'Перейти →' : 'Batafsil →'}
         </div>
       </div>
 

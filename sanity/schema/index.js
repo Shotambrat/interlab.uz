@@ -6,14 +6,15 @@ import test from './test';
 import testCategory from './testCategory';
 import promotion from './promotion';
 import doctor from './doctor';
-import instruction from './instruction';
+// import instruction from './instruction';
 import license from './license';
 import news from './news';
 import partnerReview from './partnerReview';
 import vacancy from './vacancy';
 import checkup from './checkup';
 import profit from './profit'
+import intruksion from './intruksion'
 
 export const schema = {
-  types: [banner, service, serviceCategory, blockContent, test, testCategory, promotion, doctor, instruction, license, news, partnerReview, vacancy, checkup , profit],
+  types: [banner, service, serviceCategory, blockContent, test, testCategory, promotion, doctor,  license, news, partnerReview, vacancy, checkup , profit , intruksion],
 };

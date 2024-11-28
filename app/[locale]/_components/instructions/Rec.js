@@ -5,8 +5,11 @@ import { useTranslations } from "next-intl";
 export default function Rec() {
   const t = useTranslations("Instructions");
   const data = t.raw("data");
+
+
+
   return (
-    <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 mdl:grid-cols-2 gap-8 p-8 border border-neutral-300 rounded-3xl">
+    <div className="w-full lg:mt-[60px] max-w-[1440px] mx-auto grid grid-cols-1 mdl:grid-cols-2 gap-8 p-8 border border-neutral-300 rounded-3xl">
       <div>
         <h3 className="text-4xl w-full max-w-[400px] font-semibold">
           {t("overall")}

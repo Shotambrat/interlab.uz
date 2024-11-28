@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Filter from "@/app/[locale]/_components/addresses/Filter"
 import { clinicsLocations } from '@/app/constants/map';
+import { useLocale } from 'next-intl'
 
 
 
@@ -18,6 +19,7 @@ export default function Map() {
   const userPlacemarkRef = useRef(null);
   const routeRef = useRef(null);
   const clinicsPlacemarksRef = useRef([]);
+  const locale = useLocale()
 
   useEffect(() => {
     const loadYMaps = () => {
@@ -219,7 +221,7 @@ export default function Map() {
             onClick={handleSearchClinics}
             className="rounded-full px-4 py-3 bg-[#FB6A68] font-bold  w-[320px] text-white shadow-md shadow-red-400 absolute top-4 left-4 z-10"
           >
-            Поиск ближайшей поликлиники
+          {locale === 'ru' ? 'Поиск ближайшей поликлиники' : 'Yaqin tibbiyot muassasasini topish'}
           </button>
         )}
       </div>

@@ -7,6 +7,7 @@ import PhoneInput from "react-phone-input-2";
 import axios from "axios";
 import useClickOutside from "@/hooks/useClickOutside";
 import { createPortal } from "react-dom";
+import { useLocale } from 'next-intl'
 
 export default function HouseCall({ setState }) {
   const [phone, setPhone] = useState("");
@@ -14,6 +15,7 @@ export default function HouseCall({ setState }) {
   const [loading, setLoading] = useState(false);
   const modalRef = useRef(null);
   const [form] = Form.useForm();
+  const locale = useLocale()
 
   const handlePhoneChange = (value, country, e, formattedValue) => {
     setPhone(value);
@@ -90,9 +92,17 @@ export default function HouseCall({ setState }) {
             className="w-36 h-36"
           />
           <div className="flex flex-col text-center gap-1 lg:px-12">
-            <h3 className="text-rose-400 text-2xl font-semibold">Вызов на дом</h3>
+            <h3 className="text-rose-400 text-2xl font-semibold">
+              
+              {locale === 'ru'
+              ? 'Вызов на дом'
+              : 'Uyga Chaqirish'}
+              </h3>
             <p className="text-neutral-400 text-sm ">
-              Заполните форму, чтобы заказать услугу
+              
+              {locale === 'ru'
+              ? 'Заполните форму, чтобы заказать услугу'
+              : "Xizmatni buyurtma berish uchun formani to'ldiring"}
             </p>
           </div>
           <div className="flex flex-col max-md:ml-0 w-full">
@@ -107,7 +117,7 @@ export default function HouseCall({ setState }) {
                 rules={[{ required: true, message: "Введите ваше ФИО" }]}
               >
                 <Input
-                  placeholder="Введите ваше ФИО"
+                 placeholder={locale === 'ru' ? "Введите ваше ФИО" : "FIO kiriting"}
                   className="rounded-xl input py-2 text-xl border border-gray-300 shadow-sm"
                 />
               </Form.Item>
@@ -130,10 +140,11 @@ export default function HouseCall({ setState }) {
               {/* Updated DatePicker with getPopupContainer */}
               <Form.Item
                 name="birthDate"
-                rules={[{ required: true, message: "К какой дате желаете вызов?" }]}
+                rules={[{ required: true, message: `${locale === 'ru' ? "К какой дате желаете вызов?" : "Qaysi sanaga qo'ng'iroq qilishimizni xohlaysiz?"}` }]}
               >
                 <DatePicker
-                  placeholder="К какой дате желаете вызов?"
+                 placeholder={locale === 'ru' ? "К какой дате желаете вызов?" : "Qaysi sanaga qo'ng'iroq qilishimizni xohlaysiz?"}
+
                   format="DD.MM.YYYY"
                   className="rounded-xl input py-2 text-xl w-full border border-gray-300 shadow-sm"
                   getPopupContainer={(trigger) => trigger.parentNode}
@@ -142,7 +153,7 @@ export default function HouseCall({ setState }) {
 
               <Form.Item name="comment">
                 <Input.TextArea
-                  placeholder="Введите комментарий"
+                 placeholder={locale === 'ru' ? "Введите комментарий" : "Izohni kiriting"}
                   className="rounded-xl py-2 text-xl border textarea border-gray-300 shadow-sm"
                 />
               </Form.Item>
@@ -154,7 +165,9 @@ export default function HouseCall({ setState }) {
                 disabled={loading || !isValidPhone}
                 className="rounded-[100px] px-10 py-6 text-lg font-bold text-white bg-red-400 self-start hover:bg-red-500 transition-colors duration-200"
               >
-                Отправить заявку
+                {locale === 'ru'
+              ? ' Отправить заявку'
+              : "Ariza yuborish"}
               </Button>
             </Form>
           </div>

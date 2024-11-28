@@ -1,16 +1,17 @@
 import successIcon from "@/public/svg/success-result.svg"
 import Image from "next/image";
 import closeicongray from "@/public/svg/closeicon-gray.svg";
+import { useLocale } from 'next-intl'
 
-export default function SuccessResult({ setState }) {
+export default function SuccessResult() {
+
+  const locale = useLocale()
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-60 z-50">
       <div className="bg-white max-md:p-4 px-8 py-8 rounded-3xl shadow-lg max-mdx:w-[320px] w-[450px] relative">
         <button
           className="absolute top-5 right-5"
-        //   onClick={() => {
-        //     setState(false);
-        //   }}
+      
         >
           <Image
             priority
@@ -32,10 +33,17 @@ export default function SuccessResult({ setState }) {
             />
           <div className="flex flex-col text-center gap-1 px-8 lg:px-12">
             <h3 className="text-rose-400 text-3xl font-semibold">
-              Успешно!
+             
+            {locale === 'ru' ? 'Успешно!' : 'Muvaffaqiyatli!'}
+
             </h3>
             <p className="text-neutral-400 text-sm ">
-              Результаты анализов был скачан на ваше устройство. Благодарим вас за доверие!
+              
+            {locale === 'ru'
+  ? 'Результаты анализов были скачаны на ваше устройство. Благодарим вас за доверие!'
+  : 'Tahlil natijalari qurilmangizga yuklandi. Ishonchingiz uchun rahmat!'}
+
+
             </p>
           </div>
           <button
