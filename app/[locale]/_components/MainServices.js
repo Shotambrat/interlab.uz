@@ -60,7 +60,7 @@ export default function MainServices({params}) {
             {/* Первая строка с 2 колонками, где 1 элемент шире другого */}
             <div className="grid grid-cols-1 mdx:grid-cols-2 lg:grid-cols-[60%,_40%] gap-5 w-full mt-5 lg:pr-4">
               {serviceCategories.slice(0, 2).map((service, index) => (
-                <div key={service._id} className="w-full">
+                <div key={index} className="w-full">
                   <ServiceCard
                     locale={params.locale}
                     title={service.name[locale]}
@@ -77,8 +77,8 @@ export default function MainServices({params}) {
 
             {/* Вторая и последующие строки с 3 колонками */}
             <div className="grid grid-cols-1 mdx:grid-cols-2 lg:grid-cols-3 gap-5 w-full mt-5">
-              {serviceCategories.slice(2).map((service) => (
-                <div key={service._id} className="w-full">
+              {serviceCategories.slice(2).map((service , index) => (
+                <div key={index} className="w-full">
                   <ServiceCard
                     locale={params.locale}
                     title={service.name[locale]}

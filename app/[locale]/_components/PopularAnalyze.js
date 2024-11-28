@@ -76,10 +76,10 @@ export default function PopularAnalyze({ params }) {
             </button>
           </div>
         </Link>
-        {popularTests.map((test) => (
+        {popularTests.map((test , index) => (
           <PopularAnalyzeItem
             locale={params.locale}
-            key={test.slug.current}
+            key={index}
             title={test.name[locale]}
             price={test.price}
             slug={test.slug.current}

@@ -5,7 +5,6 @@ import Link from "next/link";
 import resultLogo from "@/public/svg/result-logo.svg";
 import LiveClock from "./LiveClock";
 import WeatherDisplay from "./WeatherDisplay";
-
 const fetchToCount = async (counter) => {
   try {
     let response = await fetch(counter, {

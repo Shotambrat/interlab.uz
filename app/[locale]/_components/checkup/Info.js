@@ -137,9 +137,9 @@ export default function Info() {
               : 'Check-up’lar – bu salomatlikni baholashga yordam beradigan kompleks tekshiruv dasturlari'}
           </p>
         </div>
-        {data.map((item) => (
+        {data.map((item , index) => (
           <AccordionItem
-            key={item.id}
+            key={index}
             title={getTitle(item.id)}
             isOpen={openSection === item.id}
             onClick={() => toggleSection(item.id)}

@@ -27,7 +27,7 @@ export default function Profits() {
       <h2 className='text-4xl font-semibold'>{t('heading')}</h2>
       <div className='w-full grid grid-cols-1 mdx:grid-cols-2 lg:grid-cols-4 gap-4'>
         {Array.isArray(profits) ? (
-          profits.map((item, index) => (
+          profits((item, index) => (
             <div
               key={index}
               className='relative overflow-hidden min-h-[270px] lg:min-h-[380px] rounded-[20px] mdx:rounded-[30px] border border-[#E4E4E4]'

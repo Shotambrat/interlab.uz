@@ -46,8 +46,8 @@ const BlogPagination = ({ locale }) => {
     <div>
       {/* Сетка блогов */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {blogs.map((blog) => (
-          <div key={blog.slug.current}>
+        {blogs.map((blog , index) => (
+          <div key={index}>
             <Blog
               title={blog.title[locale]} // Заголовок на нужном языке
               excerpt={blog.excerpt}

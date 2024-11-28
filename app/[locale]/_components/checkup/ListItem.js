@@ -1,4 +1,5 @@
 // ListItem.js
+"use client"
 import React from "react";
 import { urlFor } from "@/sanity/lib/image";
 import Image from 'next/image';
@@ -11,7 +12,6 @@ export default function ListItem({
   slug,
   icon,
   color,
-  secondaryColor,
   locale
 }) {
 

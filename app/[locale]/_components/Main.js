@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Instruction from "@/app/[locale]/_components/Instuction";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import SwiperCore, { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react"; // Swiper va SwiperSlide import qilinadi
+import "swiper/css"; // Swiper uchun asosiy css
+import "swiper/css/navigation"; // Navigation uchun css
+import "swiper/css/pagination"; // Pagination uchun css
+import SwiperCore, { Navigation, Pagination } from "swiper"; // Pagination va Navigation SwiperCore dan import qilinadi
 
 import Application from "@/app/[locale]/_components/Application";
 import Blog from "@/app/[locale]/_components/Blog";
@@ -25,11 +25,8 @@ import Sale from "@/app/[locale]/_components/Sale";
 import CallToAction from "./Modals/CallToAction";
 import About from "./About";
 
-
-
-
+// Pagination va Navigation modullarini SwiperCore orqali faollashtirish
 SwiperCore.use([Navigation, Pagination]);
-
 const builder = imageUrlBuilder(client);
 
 function urlFor(source) {
@@ -293,7 +290,7 @@ function Main({ params }) {
                   {/* Первая строка с 2 колонками, где 1 элемент шире другого */}
                   <div className="grid grid-cols-1 mdx:grid-cols-2 lg:grid-cols-[60%,_40%] gap-5 w-full mt-5 lg:pr-4">
                     {serviceCategories.slice(0, 2).map((service, index) => (
-                      <div key={service._id} className="w-full">
+                      <div key={index} className="w-full">
                         <ServiceCard
                           locale={params.locale}
                           title={service.name[locale]}
@@ -312,8 +309,8 @@ function Main({ params }) {
 
                   {/* Вторая и последующие строки с 3 колонками */}
                   <div className="grid grid-cols-1 mdx:grid-cols-2 max-mdx:hidden lg:grid-cols-3 gap-5 w-full mt-5">
-                    {serviceCategories.slice(2).map((service) => (
-                      <div key={service._id} className="w-full">
+                    {serviceCategories.slice(2).map((service , index) => (
+                      <div key={index} className="w-full">
                         <ServiceCard
                           locale={params.locale}
                           title={service.name[locale]}
@@ -330,8 +327,8 @@ function Main({ params }) {
                     ))}
                   </div>
                   <div className="grid grid-cols-1 mdx:grid-cols-2 mdx:hidden lg:grid-cols-3 gap-5 w-full mt-5">
-                    {!servicesOpen && serviceCategories.slice(2, 3).map((service) => (
-                      <div key={service._id} className="w-full">
+                    {!servicesOpen && serviceCategories.slice(2, 3).map((service , index) => (
+                      <div key={index} className="w-full">
                         <ServiceCard
                           locale={params.locale}
                           title={service.name[locale]}
@@ -346,8 +343,8 @@ function Main({ params }) {
                         />
                       </div>
                     ))}
-                    {servicesOpen && serviceCategories.slice(2).map((service) => (
-                      <div key={service._id} className="w-full">
+                    {servicesOpen && serviceCategories.slice(2).map((service , index) => (
+                      <div key={index} className="w-full">
                         <ServiceCard
                           locale={params.locale}
                           title={service.name[locale]}

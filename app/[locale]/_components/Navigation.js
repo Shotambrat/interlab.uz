@@ -12,8 +12,8 @@ export default function Navigation({ locale, navOptions }) {
             </div>
           </Link>
         </li>
-        {navOptions.slice(1).map((option) => (
-          <li key={option.id} className="list-none h-full flex items-center">
+        {navOptions.slice(1).map((option , index) => (
+          <li key={index} className="list-none h-full flex items-center">
             <Link href={`/${locale}${option.url}`}>
               <div className="px-4 py-2 transition-all  duration-300 text-xl hover:text-red-400 rounded-xl">
                 {option.name}

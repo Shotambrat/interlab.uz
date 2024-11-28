@@ -98,9 +98,9 @@ const Menu = ({
                         {isOpen && (
                           <div className="origin-top-right absolute right-0 mt-2 w-24 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <div className="py-1 flex flex-col gap-2 ml-3 w-full">
-                              {availableLocales.map((lng) => (
+                              {availableLocales.map((lng , index) => (
                                 <Link
-                                  key={lng}
+                                  key={index}
                                   href={pathname}
                                   locale={lng}
                                   style={{
@@ -164,9 +164,9 @@ const Menu = ({
                     </div>
                   </div>
                 </a>
-                {navOptions.slice(1).map((option) => (
+                {navOptions.slice(1).map((option , index) => (
                   <a
-                    key={option.id}
+                    key={index}
                     href={`/${locale}${option.url}`}
                     onClick={closeMenu}
                     passHref

@@ -134,9 +134,9 @@ export default function Filter({ params }) {
           {loadingCategories ? (
             <Spin size='large' /> // Индикатор загрузки
           ) : (
-            categories.map(category => (
+            categories.map((category , index) => (
               <FilterCategory
-                key={category}
+                key={index}
                 title={category}
                 catname={category}
                 handleFilter={handleFilter}
@@ -182,9 +182,9 @@ export default function Filter({ params }) {
           {loadingTests ? (
             <Spin size='large' /> // Индикатор загрузки тестов
           ) : filteredTests.length > 0 ? (
-            filteredTests.map(test => (
+            filteredTests.map((test , index) => (
               <FilterAnalyzeItems
-                key={test.id}
+                key={index}
                 title={test.testName}
                 shortDescription={
                   test.shortDescription || 'Описание отсутствует'
