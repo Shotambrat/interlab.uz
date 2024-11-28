@@ -15,6 +15,7 @@ export default function ListItem({
   locale
 }) {
 
+  console.log(title , locale)
   
   return (
     <a

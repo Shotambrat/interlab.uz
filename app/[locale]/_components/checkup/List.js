@@ -4,8 +4,8 @@ import { client } from '@/sanity/lib/client';
 import ListItem from './ListItem';
 
 export default function List({ initialCheckups, locale }) {
+  
   const [checkups, setCheckups] = useState(initialCheckups || []); // initialCheckups ni default qiymat bilan boshlash
-
   useEffect(() => {
     if (!initialCheckups) {
       // Asinxron fetch clientda amalga oshiriladi
@@ -20,7 +20,6 @@ export default function List({ initialCheckups, locale }) {
     }
   }, [initialCheckups]); // initialCheckups o'zgarganida fetch qilish
 
-  console.log(checkups , 'checkupscheckupscheckupscheckups')
 
 
   return (
@@ -39,7 +38,7 @@ export default function List({ initialCheckups, locale }) {
       <div className='w-full grid slg:grid-cols-12 mdx:grid-cols-2 grid-cols-1 gap-3'>
         {checkups.map((item, index) => (
           <ListItem
-            locale={item.locale}
+            locale={locale}
             key={index}
             index={index}
             title={item.title[locale]}
