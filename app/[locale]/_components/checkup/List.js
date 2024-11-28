@@ -6,6 +6,7 @@ export default async function List({ locale }) {
     cache: 'no-store'
   })
 
+    console.log("RUSTAM BU SEN KUNGAN CHEKUP", checkups )
   return (
     <div className='w-full max-w-[1440px] px-2 mx-auto flex flex-col gap-8 pt-8'>
       <div className='flex flex-col'>
