@@ -33,7 +33,7 @@ const Main = () => {
     }, [slug]); // Запрос будет выполняться каждый раз при изменении slug
   
     if (!instruction) {
-      return <div>
+      return <div className='mt-[40px] flex items-center justify-center text-[20px] mdx:text-[30px]'>
         {locale === 'ru' ? "Загружается, пожалуйста, подождите" : "Yuklanyapti Iltimos Kuting"}
 
       </div>; // Пока данные не загружены

@@ -14,15 +14,15 @@ export default function Banner({ title, icon, description, color }) {
       className="w-full overflow-hidden"
     >
       {onlineReq && <OnlineReq setState={setOnlineReq} />}
-      <div className="w-full px-2 flex justify-between items-center max-w-[1440px] mx-auto">
-        <div className="text-left py-16 max-w-md">
-          <h1 className="text-5xl font-bold">{title[locale]}</h1>
+      <div className="w-full px-2 flex flex-col mdx:flex-row overflow-hidden justify-between items-center max-w-[1440px] mx-auto">
+        <div className="text-left mdx:py-16 max-w-md mt-[25px] mdx:mt-0">
+          <h1 className="text-[27px] mdx:text-5xl font-bold">{title[locale]}</h1>
           <p className="mt-4 text-lg">{description[locale]}</p>
-          <button onClick={() => setOnlineReq(true)} className="mt-6 px-16 py-3 bg-white text-xl  text-black rounded-full">
+          <button onClick={() => setOnlineReq(true)} className=" hidden lg:block mt-6 px-16 py-3 bg-white text-xl  text-black rounded-full">
           {locale === 'ru' ? 'Записаться' : 'Bog`lanish'}
           </button>
         </div>
-        <div className="relative -bottom-8 lg:h-[376px]">
+        <div className="relative h-[280px] mr-[-100px] mdx:mr-0 lg:h-[376px]">
           <img
             src={urlFor(icon).url()}
             alt={title?.ru || title?.uz}

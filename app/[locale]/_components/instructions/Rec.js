@@ -1,11 +1,39 @@
 import checkMark from "@/public/svg/check-mark.svg";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+
+const Data = {
+  description: [
+    {
+      item: {
+        ru: 'Следуйте всем указаниям врача перед сдачей анализа.',
+        uz: "Tahlil topshirishdan oldin shifokor ko'rsatmalariga rioya qiling."
+      }
+    },
+    {
+      item: {
+        ru: 'Избегайте употребления жирной пищи за день до анализа.',
+        uz: "Tahlildan bir kun oldin yog'li ovqatlardan saqlaning."
+      }
+    },
+    {
+      item: {
+        ru: 'Старайтесь не испытывать сильного стресса перед анализом.',
+        uz: 'Tahlildan oldin kuchli stressdan saqlaning.'
+      }
+    },
+    {
+      item: {
+        ru: 'Убедитесь, что соблюдаете режим сна перед сдачей анализов.',
+        uz: 'Tahlildan oldin uyqu rejimiga rioya qilganingizga ishonch hosil qiling.'
+      }
+    }
+  ]
+};
 
 export default function Rec() {
   const t = useTranslations("Instructions");
-  const data = t.raw("data");
-
+  const locale = useLocale()
 
 
   return (
@@ -16,7 +44,7 @@ export default function Rec() {
         </h3>
       </div>
       <div className="flex flex-col gap-4 w-full">
-        {data.map((item, index) => {
+        {Data.description.map((item, index) => {
           return (
             <div key={index} className="flex gap-4 items-start">
               <Image
@@ -27,7 +55,7 @@ export default function Rec() {
                 alt="CheckMark Icon"
                 className="w-5 h-5"
               />
-              <p className="text-lg">{item}</p>
+              <p className="text-lg">{item.item[locale]}</p>
             </div>
           );
         })}

@@ -52,31 +52,9 @@ export default function Contacts() {
           >
             +998 (97) 757 88 22
           </a>
-          <p className="text-neutral-400">{t("phone-for-call")} 1</p>
+          <p className="text-neutral-400">{t("phone-for-call")}</p>
         </div>
-        {/* <hr /> */}
-        {/* <div className="flex flex-col gap-2 max-mdl:flex-1">
-          <a
-            onClick={async () => {
-              try {
-                let response = await fetch(
-                  "https://interlab.mrjtrade.uz/api/count?button=call",
-                  {
-                    method: "POST",
-                  }
-                );
-                console.log("Response Of Count", response.json());
-              } catch (error) {
-                console.log("error to counter fetching", error);
-              }
-            }}
-            className="text-2xl font-medium"
-            href="tel:+998909662368"
-          >
-            +998 (90) 966 23 68
-          </a>
-          <p className="text-neutral-400">{t("phone-for-call")} 2</p>
-        </div> */}
+       
         <hr />
       </div>
       <a

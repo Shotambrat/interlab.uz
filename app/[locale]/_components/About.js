@@ -51,7 +51,7 @@ export default function About() {
               </div>
               <div className="max-lg:border-b lg:border-r-2 border-gray-300 flex flex-col items-center justify-center">
                 <p className="text-6xl lg:text-center  font-bold max-mdx:text-5xl max-mdx:leading-5 leading-6 my-auto">
-                6  {locale === 'ru' ? 'Лет' : 'Yil'} <br />
+                6  {locale === 'ru' ? 'лет' : 'iil'} <br />
                   <span className="text-gray-500 text-lg font-medium max-mdx:text-sm">
                     {locale === 'ru' ? 'бесценного опыта' : 'bebaho tajriba'}
                   </span>
