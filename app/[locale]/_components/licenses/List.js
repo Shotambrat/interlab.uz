@@ -42,13 +42,14 @@ export default function List({ locale }) {
     <div className="w-full max-w-[1440px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-5">
       {/* {modal && <LicenseModal data={modalData} close={() => setModal(false)} />} */}
       {licenses.map((license, i) => (
-        <div key={i} className="relative  border-4 border-neutral-300 ">
+        <div key={i} className="relative   ">
              <Image
             src={license.photo?.asset?.url || "/placeholder.jpg"}
             width={500}
             height={500}
             alt={`License Image ${i}`}
-            className="w-full  object-cover"
+            style={{border: '5px solid #E4E4E4'}}
+           className="w-full object-cover "
           />
          
           {/* <button
