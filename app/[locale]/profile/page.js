@@ -1,9 +1,9 @@
 import React from 'react'
-import Info from '../_components/profile/Info'
+import Info from '../components/Profile/Info'
 
 export default function page() {
   return (
-    <div >
+    <div>
       <Info />
     </div>
   )
