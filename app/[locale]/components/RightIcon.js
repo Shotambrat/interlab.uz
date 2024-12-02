@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 import backet from "@/public/svg/arrow-right-blck.svg"
 
 function Logo() {

@@ -21,8 +21,8 @@ import ServiceCard from '@/app/[locale]/components/ServiceCard'
 import imageUrlBuilder from '@sanity/image-url'
 import { client } from '@/sanity/lib/client'
 import { useTranslations } from 'next-intl'
-import Sale from '@/app/[locale]/components/Sale'
-import CallToAction from './Modals/CallToAction'
+// import Sale from '@/app/[locale]/components/Sale'
+// import CallToAction from './Modals/CallToAction'
 import About from './About'
 
 // Pagination va Navigation modullarini SwiperCore orqali faollashtirish

@@ -5,6 +5,8 @@ import Link from "next/link";
 import resultLogo from "@/public/svg/result-logo.svg";
 import LiveClock from "./LiveClock";
 import WeatherDisplay from "./WeatherDisplay";
+
+
 const fetchToCount = async (counter) => {
   try {
     let response = await fetch(counter, {
@@ -33,7 +35,7 @@ const FooterLink = ({ text }) => (
   <div className="mt-5 hover:text-gray-700 transition-colors">{text}</div>
 );
 
-const FooterSection = ({ title, links, locale }) => (
+const FooterSection = ({links, locale }) => (
   <div className="flex flex-col slg:w-6/12  max-md:ml-0 max-md:w-full">
     <nav className="flex flex-col grow text-xl text-neutral-900 max-slg:mt-10">
       {links.map((link, index) => (

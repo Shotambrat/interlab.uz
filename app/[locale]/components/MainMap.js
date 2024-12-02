@@ -295,43 +295,21 @@ export default function Map() {
           {locale === 'ru' ? 'Карта пунктов' : 'Punktlar xaritasi'}
         </h1>
 
-        <div className='w-full py-1 px-1 bg-slate-100 flex relative rounded-2xl lg:hidden'>
-          <motion.div
-            initial={false}
-            animate={{ x: isMap ? 0 : '100%' }}
-            transition={{
-              type: 'spring',
-              stiffness: 500,
-              damping: 30,
-              bounce: 0.25
-            }}
-            className='relative py-6 h-full w-1/2 bg-whit
-            e rounded-xl'
-          ></motion.div>
-          <button
-            onClick={() => setIsMap(true)}
-            className='absolute top-0 left-0 h-full w-1/2 flex items-center justify-center rounded-xl'
-          >
-            <p
-              className={`z-10 h-full text-xl absolute top-0 w-full flex items-center justify-center transition-colors duration-300 ease-in-out ${
-                isMap ? 'text-red-400 font-semibold ' : 'text-neutral-400'
-              }`}
-            >
-              {locale === 'ru' ? 'Карта' : 'Xarita'}
-            </p>
-          </button>
-          <button
-            onClick={() => setIsMap(false)}
-            className='absolute top-0 right-0 h-full w-1/2 flex items-center justify-center rounded-xl'
-          >
-            <p
-              className={`z-10 h-full text-xl absolute top-0 w-full flex items-center justify-center transition-colors duration-300 ease-in-out ${
-                !isMap ? 'text-red-400 font-semibold ' : 'text-neutral-400'
-              }`}
-            >
-              {locale === 'ru' ? 'Список' : 'Roʻyxat'}
-            </p>
-          </button>
+        <div className='w-full py-1 px-1 bg-[#F2F3F6] flex relative rounded-2xl lg:hidden'>
+          <div className='flex flex-row flex-nowrap w-full'>
+            <button  onClick={() => setIsMap(true)} className={`w-[50%] font-bold  py-[17px] rounded-[15px] flex items-center justify-center text-center ${
+                isMap ? 'text-[#FB6A68] font-semibold bg-white ' : 'text-neutral-400 bg-[#F2F3F6]'
+              }`}>
+              
+            {locale === 'ru' ? 'Карта' : 'Xarita'}
+            </button>
+            <button  onClick={() => setIsMap(false)}  className={`w-[50%]  font-bold  py-[17px] rounded-[15px] flex items-center justify-center text-center ${!isMap ? 'text-[#FB6A68]  bg-white ' : 'text-neutral-400 bg-[#F2F3F6]'}`}>
+              
+            {locale === 'ru' ? 'Список' : 'Roʻyxat'}
+            </button>
+          </div>
+
+        
         </div>
         {/* Остальной JSX код */}
         <div className='relative w-full flex max-lg:flex-col-reverse gap-5'>

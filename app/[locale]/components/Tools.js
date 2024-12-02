@@ -2,8 +2,6 @@
 import Search from '@/app/[locale]/components/Search'
 import phone from '@/public/svg/phone.svg'
 import Image from 'next/image'
-// import Profile from "@/app/[locale]/_components/Profile";
-// import backet from "@/public/svg/backet.svg";
 import MenuIcon from '@/app/[locale]/components/MenuIcon'
 import Menu from '@/app/[locale]/components/Menu'
 import { useState, useEffect } from 'react'
@@ -55,7 +53,7 @@ export default function Tools({ navOptions, locale }) {
       </AnimatePresence>
 
       <div className='flex items-center gap-4 max-mdx:gap-1 my-auto'>
-        <div className='max-mdx:hidden'>
+        <div className='max-mdx:hidden w-[25px]'>
           <button
             onClick={() => setSearch(true)}
             className='flex items-center gap-4'
@@ -73,12 +71,11 @@ export default function Tools({ navOptions, locale }) {
                   method: 'POST'
                 }
               )
-              console.log('Response Of Count', response.json())
             } catch (error) {
               console.log('error to counter fetching', error)
             }
           }}
-          className='block max-mdx:mr-2'
+          className='block max-mdx:mr-2 w-[25px]'
           href='https://t.me/interlabreception'
         >
           <Image
@@ -91,9 +88,6 @@ export default function Tools({ navOptions, locale }) {
           />
         </a>
 
-        {/* <Link className="block max-mdx:mr-2" href={`/backet`}>
-          <Image priority src={backet} width={30} height={30} alt="Phone icon" quality={100} />
-        </Link> */}
 
         <a
           onClick={async () => {
@@ -104,12 +98,11 @@ export default function Tools({ navOptions, locale }) {
                   method: 'POST'
                 }
               )
-              console.log('Response Of Count', response.json())
             } catch (error) {
               console.log('error to counter fetching', error)
             }
           }}
-          className='block max-mdx:mr-2'
+          className='block max-mdx:mr-2 w-[25px]'
           href='tel:1156'
         >
           <Image
@@ -117,7 +110,7 @@ export default function Tools({ navOptions, locale }) {
             src={phone}
             width={25}
             height={25}
-            alt='Phone icon'
+            alt='Phone icon w-[25px] h-[25px]'
             quality={100}
           />
         </a>
@@ -211,7 +204,10 @@ export default function Tools({ navOptions, locale }) {
                 className='absolute top-0 left-0 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100'
               />
             </div>
+            <p className='block lg:hidden mb-0 xl:block'>
             {t('Header.results')}
+
+              </p>
           </button>
         </a>
 

@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { useLocale } from 'next-intl'
-import { MdKeyboardArrowDown } from 'react-icons/md'
+// import { MdKeyboardArrowDown } from 'react-icons/md'
 
 const Steps = ({ checkupComposition }) => {
   const locale = useLocale()
@@ -16,7 +16,6 @@ const Steps = ({ checkupComposition }) => {
         <p className='text-[27px] mdx:text-[40px] font-bold text-[#151515]'>
           {locale === 'ru' ? 'Состав чек-апа' : 'Tekshirish tarkibi'}
         </p>
-
         <div className='flex flex-col'>
           {checkupComposition.map((item, index) => (
             <div
@@ -34,15 +33,15 @@ const Steps = ({ checkupComposition }) => {
                 >
                   {item?.title[locale]}
                 </p>
-                <MdKeyboardArrowDown
+                {/* <MdKeyboardArrowDown
                   className={`transform w-[25px] h-[25px] lg:w-[30px] lg:h-[30px] transition-transform duration-200 ${
                     activeIndex === index
                       ? 'rotate-180 text-[#FB6A68]'
                       : 'rotate-0 text-[#151515]'
                   }`}
-                />
+                /> */}
               </button>
-              {activeIndex === index && (
+              {/* {activeIndex === index && (
                 <div className='mt-[12px]'>
                   {item?.description &&
                     item.description[locale]?.length > 0 &&
@@ -57,7 +56,7 @@ const Steps = ({ checkupComposition }) => {
                       ))
                     )}
                 </div>
-              )}
+              )} */}
             </div>
           ))}
         </div>

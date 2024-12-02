@@ -1,7 +1,7 @@
 // checkup.js
 export default {
     name: 'checkup',
-    title: 'Чекап',
+    title: 'Чек-апы',
     type: 'document',
     fields: [
       {
@@ -117,7 +117,7 @@ export default {
       {
         name: 'price',
         title: 'Цена',
-        type: 'number',
+        type: 'string',
         validation: Rule => Rule.required().positive(),
       },
       {
@@ -129,7 +129,7 @@ export default {
       {
         name: 'discountPercentage',
         title: 'Процент скидки',
-        type: 'number',
+        type: 'string',
         hidden: ({ document }) => !document?.hasDiscount,
         validation: Rule => Rule.min(0).max(100),
       },
