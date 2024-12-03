@@ -3,16 +3,16 @@ import rightIcon from '@/public/svg/right-contact-red.svg';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 
-export default function ServiceItems({ title, category, url }) {
+export default function ServiceItems({ title, category }) {
   const t = useTranslations();
   const locale = useLocale()
   return (
     <div  className="w-full h-[200px] cursor-pointer slg:h-[200px] rounded-3xl pl-6 py-6 bg-slate-100">
       <div className="flex flex-col h-full justify-between items-start">
         <div className="flex flex-col">
-          <h2 className="font-bold text-xl slg:text-2xl break-words">{title[locale]}</h2>
+          <h2 className="font-bold text-xl slg:text-2xl break-words">{title}</h2>
           {/* Display the category name */}
-          <p className="text-neutral-400">{category}</p>
+          {/* <p className="text-neutral-400">{category}</p> */}
         </div>
         
         {/* PEREYTI */}

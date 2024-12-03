@@ -48,7 +48,7 @@ export default function Blog({ locale }) {
 
   return (
     <div className='w-full max-md:px-2'>
-      <div className='grid grid-cols-1 max-mdx:hidden lg:grid-cols-4 gap-5 max-md:gap-0'>
+      <div className='grid grid-cols-1 max-mdx:hidden slg:grid-cols-2 lg:grid-cols-4 gap-5 max-md:gap-0'>
         {blogs.map((blog, index) => (
           <BlogCard
             key={index}

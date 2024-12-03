@@ -7,22 +7,18 @@ export default async function ServicePage({ params }) {
 
   // Fetch services with their category info
   const services = await client.fetch(
-    `*[_type == "service"]{
-      name,
-      slug,
+    `*[_type == "servicepage"]{
+      title,
       category->{
         _id,
-        name
+        title
       }
     }`,
     { cache: 'no-store' }
   )
   // Fetch only categories that have at least one service
   const categories = await client.fetch(
-    `*[_type == "serviceCategory" && count(*[_type == "service" && references(^._id)]) > 0]{
-      _id,
-      name
-    }`
+    `*[_type == "categorypage"]`
   )
 
   return (
@@ -30,7 +26,7 @@ export default async function ServicePage({ params }) {
       <ServiceBanner locale={locale} />
       <ServiceList
         services={services}
-        categories={categories}
+        categoriesProps={categories}
         locale={locale}
       />
     </div>

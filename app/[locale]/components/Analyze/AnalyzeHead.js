@@ -1,7 +1,7 @@
 export default function AnalyzeHead({ test, locale }) {
   return (
     <div className="w-full bg-slate-100 px-3">
-      <div className="w-full max-w-[1440px] flex justify-between py-12 max-mdx:py-6 mx-auto">
+      <div className="w-full max-w-[1440px] flex justify-between py-12 max-mdx:py-6 mx-auto ">
         <div className="flex flex-col gap-4">
           <h1 className="font-bold mdx:text-3xl text-2xl slg:text-4xl">
             {test.name[locale]}

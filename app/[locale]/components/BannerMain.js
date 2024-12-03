@@ -224,7 +224,7 @@ const Slider = ({ params }) => {
               >
                 <Image
                   src={urlFor(banners[currentSlide].photo).url()}
-                  className="grow w-full max-mdl:max-w-[500px] object-cover rounded-none aspect-[1.01] max-md:mt-10 max-md:max-w-full"
+                  className="grow w-full  mdx:w-full object-cover rounded-none aspect-[1.01] max-md:mt-10 max-md:max-w-full"
                   alt="Medical facility"
                   priority
                   width={1000}

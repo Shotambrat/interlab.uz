@@ -30,6 +30,18 @@ export default function About() {
             </p>
           </div>
         </div>
+        <div className="w-full flex mdx:hidden justify-between">
+            <Link href={'/about'} className='w-[48%] '>
+              <button className="px-[24px] py-3 text-[14px] h-[43px] w-full max-mdx:text-base max-mdx:px-6 max-mdx:py-2 font-semibold text-white bg-[#FB6A68] rounded-full ">
+                {locale === 'ru' ? 'Подробнее о нас' : 'Biz haqimizda batafsil'}
+              </button>
+            </Link>
+            <Link href={'/about/licences'} className='w-[48%]'>
+              <button className="px-[24px] py-3 w-full  border-2 font-semibold border-[#FB6A68] text-[#FB6A68] rounded-full text-[14px]">
+                {locale === 'ru' ? 'Лицензии' : 'Litsenziyalar'}
+              </button>
+            </Link>
+          </div>
         <div className="flex flex-col w-full gap-8">
           <div className="flex flex-col w-full gap-8">
             <Image
@@ -75,7 +87,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="w-full flex gap-4">
+          <div className="w-full hidden mdx:flex gap-4">
             <Link href={'/about'}>
               <button className="px-8 py-3 text-xl max-mdx:text-base max-mdx:px-6 max-mdx:py-2 font-semibold text-white bg-[#FB6A68] rounded-full">
                 {locale === 'ru' ? 'Подробнее о нас' : 'Biz haqimizda batafsil'}

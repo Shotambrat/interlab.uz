@@ -8,13 +8,13 @@ import arrowRightRed from '@/public/svg/arrow-right-red.svg'
 import { Select } from 'antd'
 import { useTranslations } from 'next-intl'
 import { DownOutlined } from '@ant-design/icons'
-import axios from 'axios'
 
-export default function ServiceList({ services, locale }) {
+
+export default function ServiceList({ services, locale , categoriesProps }) {
   const t = useTranslations()
-
+  console.log("HUynya" , categoriesProps)
   const [servicesOpen, setServicesOpen] = useState(false)
-  const [categories, setCategories] = useState([]) // Store category objects, not just strings
+  const [categories, setCategories] = useState(categoriesProps) // Store category objects, not just strings
   const [selectedCategory, setSelectedCategory] = useState(null) // Default to "All services"
 
   // Generate mobile category options
@@ -22,7 +22,7 @@ export default function ServiceList({ services, locale }) {
     { value: null, label: t('Services.all') }, // Option for "All services"
     ...categories.map(category => ({
       value: category._id,
-      label: category.name[locale] || category.name.ru
+      label: category.title[locale] || category.title.ru
     }))
   ]
 
@@ -31,44 +31,7 @@ export default function ServiceList({ services, locale }) {
     ? services.filter(service => service.category._id === selectedCategory)
     : services
 
-  useEffect(() => {
-    const fetchDataOfApi = async () => {
-      try {
-        const response = await axios.post('/api/proxy', {
-          userName: 'INTERMED',
-          password: 'IN12TER34MED56',
-          language: 2
-        })
 
-        const testsData = response.data.data
-
-        // Exclude unwanted categories
-        const excludedCategories = [
-          'Терапевт',
-          'Невропатолог',
-          'Процедура',
-          'ЛОР'
-        ]
-        const filteredCategories = testsData.filter(
-          test => !excludedCategories.includes(test.testSectionName)
-        )
-
-        // Get unique categories and their names
-        const uniqueCategories = filteredCategories.reduce((acc, test) => {
-          if (!acc.some(category => category.name === test.testSectionName)) {
-            acc.push({ _id: test.testSectionName, name: test.testSectionName })
-          }
-          return acc
-        }, [])
-
-        setCategories(uniqueCategories)
-      } catch (error) {
-        console.error('Error fetching categories:', error)
-      }
-    }
-
-    fetchDataOfApi()
-  }, [])
 
   return (
     <div className='h-auto w-full px-4 bg-white'>
@@ -79,7 +42,7 @@ export default function ServiceList({ services, locale }) {
             className={`px-4 py-3 rounded-full  ${!selectedCategory ? 'bg-[#FB6A68] text-white' : 'border border-[#E4E4E4]'}`}
             onClick={() => setSelectedCategory(null)}
           >
-            Все услуги
+            {t('Services.all')}
           </button>
 
           {categories.map(category => (
@@ -88,7 +51,7 @@ export default function ServiceList({ services, locale }) {
               className={`px-4 py-3 rounded-full ${selectedCategory === category._id ? 'bg-[#FB6A68] text-white' : 'border border-[#E4E4E4]'}`}
               onClick={() => setSelectedCategory(category._id)}
             >
-              {category.name || category.name}
+              {category.title[locale] || category.title.ru}
             </button>
           ))}
         </div>
@@ -128,9 +91,9 @@ export default function ServiceList({ services, locale }) {
           {filteredServices.map((service, index) => (
             <ServiceItems
               key={index}
-              title={service.name[locale] || service.name.ru}
+              title={service.title[locale] || service.title.ru}
               category={
-                service.category.name[locale] || service.category.name.ru
+                service.category.title[locale] || service.category.title.ru
               }
               locale={locale}
             />
@@ -141,11 +104,10 @@ export default function ServiceList({ services, locale }) {
             filteredServices.map((service, index) => (
               <ServiceItems
                 key={index}
-                title={service.name[locale] || service.name.ru}
+                title={service.title[locale] || service.title.ru}
                 category={
-                  service.category.name[locale] || service.category.name.ru
+                  service.category.title[locale] || service.category.title.ru
                 }
-                url={`/services/${service.slug.current}`}
                 locale={locale}
               />
             ))}
@@ -155,11 +117,10 @@ export default function ServiceList({ services, locale }) {
               .map((service, index) => (
                 <ServiceItems
                   key={index}
-                  title={service.name[locale] || service.name.ru}
+                  title={service.title[locale] || service.title.ru}
                   category={
-                    service.category.name[locale] || service.category.name.ru
+                    service.category.title[locale] || service.category.title.ru
                   }
-                  url={`/services/${service.slug.current}`}
                   locale={locale}
                 />
               ))}

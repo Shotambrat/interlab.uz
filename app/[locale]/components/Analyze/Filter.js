@@ -128,7 +128,7 @@ export default function Filter({ params }) {
         />
       </div>
 
-      <div className='w-full mdx:px-[20px] lg:mdx:px-0 max-w-[1440px] mx-auto h-auto flex max-mdl:flex-col gap-10'>
+      <div className='w-full mdx:px-[20px] lg:mdx:px-0 max-w-[1440px] mx-auto h-auto flex max-mdl:flex-col gap-10 lg:px-[40px] xl:px-0'>
         {/* Desktop version of categories */}
         <div className='w-full mdl:max-w-1/3 mdl:w-1/3 flex flex-col gap-3 h-auto max-mdl:hidden'>
           {loadingCategories ? (
@@ -178,7 +178,7 @@ export default function Filter({ params }) {
         </div>
 
         {/* List of filtered tests */}
-        <div className='w-full mdl:max-w-2/3 mdl:w-2/3 flex flex-col gap-3 h-auto'>
+        <div className='w-full mdl:max-w-2/3 mdl:w-2/3 flex flex-col gap-[30px] h-auto'>
           {loadingTests ? (
             <Spin size='large' /> // Индикатор загрузки тестов
           ) : filteredTests.length > 0 ? (

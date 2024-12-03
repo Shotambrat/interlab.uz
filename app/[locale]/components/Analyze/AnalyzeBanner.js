@@ -9,7 +9,7 @@ function AnalyzeBanner() {
     <div className="bg-sky-100 w-full px-4 lg:px-0 py-10 h-full lg:max-h-[400px]">
       <div className="max-w-[1440px] w-full mx-auto flex flex-col mdl:flex-row items-center h-full overflow-hidden">
         {/* Left side - title and description */}
-        <div className="flex flex-col w-full mdl:max-w-[800px] text-left justify-center">
+        <div className="flex flex-col w-full mdl:max-w-[800px] text-left justify-center lg:pl-[80px] xl:pl-[25px]">
           <h1 className="text-[36px] font-bold text-neutral-900 mb-4">
             
           {locale === 'ru' ? 'Лабораторные анализы в Interlab' : 'Interlab laboratoriya tahlillari'}

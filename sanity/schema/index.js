@@ -14,7 +14,9 @@ import vacancy from './vacancy';
 import checkup from './checkup';
 import profit from './profit'
 import intruksion from './intruksion'
+import cotegoryPageService from './cotegoryPageService'
+import servicePageService from './servicePageService'
 
 export const schema = {
-  types: [banner, service, serviceCategory, blockContent, test, testCategory, promotion, doctor,  license, news, partnerReview, vacancy, checkup , profit , intruksion],
+  types: [banner, service, serviceCategory, blockContent, test, testCategory, promotion, doctor,  license, news, partnerReview, vacancy, checkup , profit , intruksion , cotegoryPageService , servicePageService],
 };
