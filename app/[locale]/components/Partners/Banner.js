@@ -32,6 +32,7 @@ export default function Banner({onclick}) {
           src={forPartnersBanner}
           width={1500}
           height={1500}
+          quality={1000}
           alt="About Banner"
           className="h-full w-full  object-cover"
         />
