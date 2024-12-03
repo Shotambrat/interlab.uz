@@ -16,8 +16,9 @@ export default function ServiceList({ services, locale , categoriesProps }) {
   const [servicesOpen, setServicesOpen] = useState(false)
   const [categories, setCategories] = useState(categoriesProps) // Store category objects, not just strings
   const [selectedCategory, setSelectedCategory] = useState(null) // Default to "All services"
-
   // Generate mobile category options
+
+  
   const mobileCategory = [
     { value: null, label: t('Services.all') }, // Option for "All services"
     ...categories.map(category => ({

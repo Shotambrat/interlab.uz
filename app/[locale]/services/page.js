@@ -7,7 +7,7 @@ export default async function ServicePage({ params }) {
 
   // Fetch services with their category info
   const services = await client.fetch(
-    `*[_type == "servicepage"]{
+    `*[_type == "servicepage"][0..800]{
       title,
       category->{
         _id,
@@ -16,9 +16,10 @@ export default async function ServicePage({ params }) {
     }`,
     { cache: 'no-store' }
   )
+  
   // Fetch only categories that have at least one service
   const categories = await client.fetch(
-    `*[_type == "categorypage"]`
+    `*[_type == "categorypage"]`, { cache: 'no-store' }
   )
 
   return (
