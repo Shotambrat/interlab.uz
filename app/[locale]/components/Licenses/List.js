@@ -1,9 +1,11 @@
 "use client";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
 import LicenseModal from "../Modals/LicenseModal";
 import { IoSearch } from "react-icons/io5";
+import { Image } from 'antd';
+
+
 export default function List({ locale }) {
   const [modal, setModal] = useState(false);
   const [modalData, setModalData] = useState(null);
@@ -45,8 +47,6 @@ export default function List({ locale }) {
         <div key={i} className="relative   ">
              <Image
             src={license.photo?.asset?.url || "/placeholder.jpg"}
-            width={500}
-            height={500}
             alt={`License Image ${i}`}
             style={{border: '5px solid #E4E4E4'}}
            className="w-full object-cover "

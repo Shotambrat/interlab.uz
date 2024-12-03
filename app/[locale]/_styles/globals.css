@@ -145,3 +145,9 @@ button:disabled {
   background-color: #FB6A68 !important; /* Красный фон для выбранного элемента */
   color: white !important; /* Белый текст для выбранного элемента */
 }
+
+
+
+.ant-image-mask-info {
+	display: none !important;
+}
