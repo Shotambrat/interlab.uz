@@ -91,6 +91,8 @@ export default function ServiceList({ services, locale , categoriesProps }) {
           {filteredServices.map((service, index) => (
             <ServiceItems
               key={index}
+              application={true}
+
               title={service.title[locale] || service.title.ru}
               category={
                 service.category.title[locale] || service.category.title.ru
@@ -104,6 +106,8 @@ export default function ServiceList({ services, locale , categoriesProps }) {
             filteredServices.map((service, index) => (
               <ServiceItems
                 key={index}
+                application={true}
+
                 title={service.title[locale] || service.title.ru}
                 category={
                   service.category.title[locale] || service.category.title.ru
@@ -117,6 +121,7 @@ export default function ServiceList({ services, locale , categoriesProps }) {
               .map((service, index) => (
                 <ServiceItems
                   key={index}
+                  application={true}
                   title={service.title[locale] || service.title.ru}
                   category={
                     service.category.title[locale] || service.category.title.ru
