@@ -23,7 +23,7 @@ export default function LegalProfits() {
   }, [locale])
 
   return (
-    <div className='w-full max-w-[1440px] flex flex-col gap-8 mx-auto mt-[300px] mdx:mt-[200px] px-[16px]'>
+    <div className='w-full max-w-[1440px] flex flex-col gap-8 mx-auto mt-[300px] mdx:mt-[100px] px-[16px]'>
       <h2 className='text-4xl font-semibold'>{t('heading')}</h2>
       <div className='w-full grid grid-cols-1 mdx:grid-cols-2 lg:grid-cols-4 gap-4'>
         {Array.isArray(profits) ? (

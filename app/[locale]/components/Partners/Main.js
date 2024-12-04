@@ -1,10 +1,12 @@
 "use client"
-import { useState , useRef} from 'react';
+import { useRef} from 'react';
 import Banner from './Banner';
 import Calculator from './Calculator';
 import PriceCut from './PriceCut';
 import Profits from './Profits';
 import Application from '../Application';
+import ProccesWork from './ProccesWork';
+import MobileProccesWork from './mobileProccesWork';
 
 const MainPartners = () => {
     const useCalcRef = useRef(null);
@@ -20,6 +22,12 @@ const MainPartners = () => {
   return (
     <div className='w-full flex flex-col gap-48 bg-white pb-48'>
         <Banner onclick={handleShow} />
+        <div className='hidden lg:block'>
+          <ProccesWork />
+        </div>
+        <div className='block lg:hidden'>
+        <MobileProccesWork />
+          </div>
         <PriceCut />
         <Profits />
         <div ref={useCalcRef}>
