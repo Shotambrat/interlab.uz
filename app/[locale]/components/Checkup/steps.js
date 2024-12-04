@@ -12,7 +12,7 @@ const Steps = ({ checkupComposition }) => {
   }
   return (
     <div>
-      <div className='flex flex-col px-[16px] mdx:px-[20px] lg:px-[40px]'>
+      <div className='flex flex-col px-[16px] mdx:px-[20px] lg:mt-[100px] lg:px-[40px]'>
         <p className='text-[27px] mdx:text-[40px] font-bold text-[#151515]'>
           {locale === 'ru' ? 'Состав чек-апа' : 'Tekshirish tarkibi'}
         </p>

@@ -19,7 +19,7 @@ const MainLegal = () => {
 
   return (
         <div className='w-full bg-white flex flex-col gap-32 pb-32'>
-      <Banner />
+      <Banner onclick={ScrollTopApllication} />
       <Info ScrollTopApllication={ScrollTopApllication} />
       <div className='hidden lg:block'>
       <ProccesWork />

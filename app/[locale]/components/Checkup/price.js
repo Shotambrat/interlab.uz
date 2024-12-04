@@ -15,7 +15,7 @@ const PriceCheckup = ({ price, discountPercentage }) => {
     : price
 
   return (
-    <div className='bg-[#FFEFEF] rounded-[30px] overflow-hidden relative   mx-[16px] mdx:px-[20px] lg:px-[40px]'>
+    <div className='bg-[#FFEFEF] rounded-[30px] lg:mt-[100px] overflow-hidden relative   mx-[16px] mdx:px-[20px] lg:px-[40px]'>
       <Image
         src={Top}
         width={300}

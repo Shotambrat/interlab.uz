@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Desktop from './desktop.png'
 import Mobile from './phone.png'

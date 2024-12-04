@@ -29,9 +29,9 @@ const Similar = () => {
   )
 
   return (
-    <div className='px-[16px] mdx:px-[20px] lg:px-[40px]'>
+    <div className='px-[16px] mdx:px-[20px] lg:px-[40px] lg:mt-[100px]'>
       <p className='text-[27px] mdx:text-[40px] font-bold text-[#151515] mb-0'>
-        {locale ==='ru' ? "Так же может интересовать" : "Shuningdek sizni qiziqtirishi mumkin"}
+        {locale ==='ru' ? "Вас также может заинтересовать" : "Shuningdek sizni qiziqtirishi mumkin"}
       </p>
 
       <div className='flex flex-col gap-[20px] mdx:flex-col lg:flex-row mt-[20px] mdx:mt-[30px] lg:mt-[40px]'>

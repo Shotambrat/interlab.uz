@@ -66,11 +66,14 @@ export default async function CheckupPage({ params }) {
       )}
       <PriceCheckup price={price} discountPercentage={discountPercentage} />
       {stages && stages.length > 0 && <CheckupOverview stages={stages} />}
+      <div className='px-[16px] mdl:px-[20px] lg:px-0 lg:mt-[100px]'>
       <WhyWe />
-      <div className='w-full max-w-[1440px] px-2 mx-auto'>
+
+      </div>
+      <div className='w-full max-w-[1440px] px-2 mx-auto lg:mt-[100px]'>
         <Instuction locale={locale} />
       </div>
-      <div className='w-full max-w-[1440px] px-2 mx-auto'>
+      <div className='w-full max-w-[1440px] px-2 mx-auto lg:mt-[100px]'>
         <Application />
       </div>
 
