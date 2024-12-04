@@ -1,5 +1,6 @@
 // import Image from 'next/image';
 // import rightIcon from '@/public/svg/right-contact-red.svg';
+"use client"
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
