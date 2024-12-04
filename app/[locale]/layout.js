@@ -6,6 +6,7 @@ import Header from '@/app/[locale]/components/Header'
 import Footer from '@/app/[locale]/components/Footer'
 import CallToAction from './components/Modals/CallToAction'
 import Script from 'next/script'
+import PageTransition from './components/PageTransition'
 
 export const metadata = {
   title: {
@@ -43,8 +44,10 @@ export default async function LocaleLayout({ children, params }) {
 
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header locale={locale} />
+          <PageTransition>
+            {children}
+          </PageTransition>
           <CallToAction locale={locale} />
-
           {/* Яндекс.Метрика */}
           <Script
             id='yandex-metrika'
@@ -77,7 +80,6 @@ export default async function LocaleLayout({ children, params }) {
             </div>
           </noscript>
 
-          <main>{children}</main>
           <Footer locale={locale} />
         </NextIntlClientProvider>
       </body>
