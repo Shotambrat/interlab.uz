@@ -21,6 +21,7 @@ export default function Map() {
   const routeRef = useRef(null)
   const clinicsPlacemarksRef = useRef([])
   const locale = useLocale()
+
   useEffect(() => {
     const loadYMaps = () => {
       return new Promise((resolve, reject) => {
@@ -67,7 +68,7 @@ export default function Map() {
     if (!mapRef.current) {
       mapRef.current = new ymaps.Map('map', {
         center: center,
-        zoom: 10,
+        zoom: 20,
         controls: ['zoomControl']
       })
 
