@@ -1,15 +1,12 @@
-// import Image from 'next/image';
-// import rightIcon from '@/public/svg/right-contact-red.svg';
 "use client"
 import Link from 'next/link';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { useState } from 'react';
 import ContactWithUs from '../Modals/OnlineReq';
 
 export default function ServiceItems({ title, application }) {
   const [open, setOpen] = useState(false)
 
-  const t = useTranslations();
   const locale = useLocale()
 
   const handleOpen = () => setOpen(!open)
@@ -20,11 +17,7 @@ export default function ServiceItems({ title, application }) {
       <div className="flex flex-col h-full justify-between items-start">
         <div className="flex flex-col">
           <h2 className="font-bold text-xl slg:text-2xl break-words">{title}</h2>
-          {/* Display the category name */}
-          {/* <p className="text-neutral-400">{category}</p> */}
         </div>
-
-        {/* PEREYTI */}
         {application && (
           <div className='w-[93%] flex flex-col  mdl:flex-row mdl:gap-[20px] gap-[10px] lg:ml-[10px] lg:gap-[30px]'>
             <Link href={`tel:+998977578822`} className='bg-[#FB6A68] text-center py-[12px] px-[16px] text-white rounded-full mdl:py-[13px] mdl:px-[20px] font-bold'>
@@ -36,7 +29,6 @@ export default function ServiceItems({ title, application }) {
           </div>
         )}
         {open ? <ContactWithUs setState={setOpen} /> : null}
-
       </div>
     </div>
   );
