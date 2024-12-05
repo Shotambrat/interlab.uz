@@ -26,7 +26,7 @@ export default function ServiceItems({ title, application }) {
 
         {/* PEREYTI */}
         {application && (
-          <div className='w-[93%] flex flex-col  mdl:flex-row gap-[10px]'>
+          <div className='w-[93%] flex flex-col  mdl:flex-row mdl:gap-[20px] gap-[10px] lg:ml-[10px] lg:gap-[30px]'>
             <Link href={`tel:+998977578822`} className='bg-[#FB6A68] text-center py-[12px] px-[16px] text-white rounded-full mdl:py-[13px] mdl:px-[20px] font-bold'>
               {locale === 'ru' ? 'Позвонить' : 'Telefon qilish'}
             </Link>
