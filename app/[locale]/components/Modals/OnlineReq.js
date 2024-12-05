@@ -9,7 +9,7 @@ import { useLocale } from 'next-intl'
 
 const { TextArea } = Input
 
-export default function ContactWithUs({ setState }) {
+export default function ContactWithUs({ setState , title }) {
   const [phone, setPhone] = useState('')
   const [isValidPhone, setIsValidPhone] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -40,8 +40,8 @@ export default function ContactWithUs({ setState }) {
     const payload = {
       name: values.fullName,
       phone: phone,
-      birthDate: '696969', // Date of birth
-      comment: values.comment || ''
+      comment: values.comment || '',
+      ...(title && title.trim() !== '' && { serviceName: title })
     }
 
     try {

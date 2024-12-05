@@ -94,6 +94,7 @@ export default function ServiceList({ services, locale , categoriesProps }) {
               application={true}
 
               title={service.title[locale] || service.title.ru}
+              serviceName={service.title.ru}
               category={
                 service.category.title[locale] || service.category.title.ru
               }
@@ -107,6 +108,7 @@ export default function ServiceList({ services, locale , categoriesProps }) {
               <ServiceItems
                 key={index}
                 application={true}
+                serviceName={service.title.ru}
 
                 title={service.title[locale] || service.title.ru}
                 category={

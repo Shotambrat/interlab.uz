@@ -4,7 +4,7 @@ import { useLocale } from 'next-intl';
 import { useState } from 'react';
 import ContactWithUs from '../Modals/OnlineReq';
 
-export default function ServiceItems({ title, application }) {
+export default function ServiceItems({ title, application , serviceName }) {
   const [open, setOpen] = useState(false)
 
   const locale = useLocale()
@@ -28,7 +28,7 @@ export default function ServiceItems({ title, application }) {
             </button>
           </div>
         )}
-        {open ? <ContactWithUs setState={setOpen} /> : null}
+        {open ? <ContactWithUs title={serviceName} setState={setOpen} /> : null}
       </div>
     </div>
   );
