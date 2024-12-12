@@ -8,7 +8,10 @@ export default function Services({ services, locale }) {
 
   return (
     <div className='flex flex-col gap-8'>
-      <h3 className='text-4xl font-semibold'>Услуги врача</h3>
+      <h3 className='text-4xl font-semibold'>
+        {locale  === 'ru' ? 'Услуги врача' : 'Shifokor xizmatlari'}
+
+      </h3>
       <div className='grid grid-cols-1 mdx:grid-cols-2 lg:grid-cols-3 gap-4'>
         {services.map((service, i) => (
           <ServiceItems

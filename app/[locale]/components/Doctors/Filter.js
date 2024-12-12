@@ -45,10 +45,10 @@ export default function Filter({ doctors, locale }) {
           <SearchComp
             query={query}
             onChange={handleSearchChange}
-            placeholder={'Введите имя или фамилию врача'}
+            placeholder={ locale=== 'ru' ? "Введите имя или фамилию врача" : "Shifokorning ismi yoki familiyasini kiriting."}
           />
         </div>
-        <div className='w-full max-w-[1440px] mx-auto grid grid-cols-1 mdx:grid-cols-2 lg:grid-cols-4 gap-5'>
+        <div className='w-full max-w-[1440px] mx-auto grid grid-cols-1 mdx:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
           {filteredDoctors.length > 0 ? (
             filteredDoctors.map((doctor, index) => (
               <div key={index} className=' flex justify-center'>

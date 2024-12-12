@@ -170,7 +170,7 @@ const Slider = ({ params }) => {
                     />
                   </h2>
                   <p
-                    className="text-sm relative w-full max-w-[full] -top-8 mdx:-top-16 mdx:text-lg text-zinc-600 max-md:max-w-full"
+                    className="text-sm relative w-full max-w-[full] -top-8 mdx:-top-[47px] lg:-top-[57px] mdx:text-lg text-zinc-600 max-md:max-w-full"
                     dangerouslySetInnerHTML={{
                       __html: formatText(
                         banners[currentSlide].description?.[locale]
@@ -188,7 +188,7 @@ const Slider = ({ params }) => {
                   />
                 </h2>
                 <p
-                  className="text-sm mdx:text-lg relative w-full max-w-[400px] -top-8 mdx:-top-16 text-zinc-600 max-md:max-w-full"
+                  className="text-sm mdx:text-lg relative w-full max-w-[400px] -top-8 mdx:-top-[47px] lg:-top-[57px] text-zinc-600 max-md:max-w-full"
                   dangerouslySetInnerHTML={{
                     __html: formatText(
                       banners[currentSlide].description?.[locale]
