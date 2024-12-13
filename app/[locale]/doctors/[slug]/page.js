@@ -6,6 +6,46 @@ import { client } from '@/sanity/lib/client'
 import Application from '../../components/Application'
 import Services from '../../components/Doctors/Services'
 import Address from '../../components/Doctors/Address'
+import { doctorsMetada } from '@/constants/doctors-metada'
+
+
+
+export async function generateStaticParams() {
+  // Dinamik URL-lar uchun kerak bo'lsa, parametrlar ro'yxatini qaytaradi
+  return [
+    { slug: 'rustam' },
+    { slug: 'another-case' },
+  ];
+}
+
+// Meta ma'lumotlarni dinamik yaratish
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const meta = doctorsMetada[slug] || doctorsMetada.default;
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: meta.url,
+      type: 'website',
+    },
+    alternates: {
+      canonical: meta.url,
+    },
+  };
+}
+
+
+
+
+
+
+
+
+
 
 export default async function DoctorPage({ params }) {
   const { slug, locale } = params

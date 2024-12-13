@@ -204,7 +204,7 @@ export default function Tools({ navOptions, locale }) {
                 className='absolute top-0 left-0 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100'
               />
             </div>
-            <p className='block lg:hidden mb-0 xl:block'>
+            <p className='block lg:hidden mb-0 xxl:block'>
             {t('Header.results')}
 
               </p>

@@ -3,10 +3,42 @@ import ServiceItemBanner from '@/app/[locale]/components/Services/ServiceItemBan
 import ServiceItemInfo from '@/app/[locale]/components/Services/ServiceItemInfo'
 import Interest from '@/app/[locale]/components/Services/Interest'
 import dynamic from 'next/dynamic'
-
+import {metaInfoService} from '@/constants/service-metada'
 const Application = dynamic(() => import('../../components/Application'), {
   ssr: false
 })
+
+
+
+export async function generateStaticParams() {
+  // Dinamik URL-lar uchun kerak bo'lsa, parametrlar ro'yxatini qaytaradi
+  return [
+    { slug: 'rustam' },
+    { slug: 'another-case' },
+  ];
+}
+
+// Meta ma'lumotlarni dinamik yaratish
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const meta = metaInfoService[slug] || metaInfoService.default;
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: meta.url,
+      type: 'website',
+    },
+    alternates: {
+      canonical: meta.url,
+    },
+  };
+}
+
+
 
 export default async function ServiceDetailPage({ params }) {
   const { slug, locale } = params

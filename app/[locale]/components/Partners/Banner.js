@@ -1,6 +1,4 @@
 import { useTranslations } from "next-intl";
-import Image from "next/image";
-import forPartnersBanner from '@/public/images/forPartnerBanner.jpg'
 
 
 export default function Banner({onclick}) {
@@ -12,7 +10,6 @@ export default function Banner({onclick}) {
         <div className='px-[16px] lg:w-[80%]'>
         <h1 className=" text-[35px] lg:text-5xl font-bold w-full mb-0 ">
         <br className='block mdx:hidden'/>
-
           {t("title")}
           <span className="text-rose-400 hidden lg:ml-[10px]">INTERMED INNOVATION</span>
         </h1>
@@ -28,8 +25,8 @@ export default function Banner({onclick}) {
        
       </div>
       <div className="h-[477px] w-full mdx:h-[577px] lg:w-[50%] lg:h-[750px] slg:mt-[30px] lg:mt-0">
-        <Image
-          src={forPartnersBanner}
+        <img
+          src='https://ucarecdn.com/b564ceac-a24f-46f8-b294-4494eb86f7b5/-/preview/1000x667/'
           width={1500}
           height={1500}
           quality={1000}

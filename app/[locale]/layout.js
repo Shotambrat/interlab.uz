@@ -26,6 +26,7 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={locale}>
+     
       <body>
         {/* Google Analytics */}
         <Script
