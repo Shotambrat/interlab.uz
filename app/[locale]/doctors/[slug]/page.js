@@ -22,8 +22,10 @@ export async function generateStaticParams() {
 // Update the generateMetadata function
 export async function generateMetadata({ params }) {
   const { slug } = params;
-  const meta = doctorsMetada[slug] || doctorsMetada.default;
+  const normalizedSlug = slug.trim().toLowerCase();
+  const meta = doctorsMetada[normalizedSlug] || doctorsMetada.default;
 
+  
   return {
     title: meta?.title || doctorsMetada.default.title,
     description: meta?.description || doctorsMetada.default.description,

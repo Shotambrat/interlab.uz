@@ -1,5 +1,5 @@
-// DoctorItemHead component
-'use client'
+"use client"
+
 import { useState } from 'react'
 import Image from 'next/image'
 import ButtonModalRedBg from '@/app/[locale]/components/Buttons/ButtonModalRedBg'
