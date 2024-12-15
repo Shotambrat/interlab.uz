@@ -13,8 +13,8 @@ import { doctorsMetada } from '@/constants/doctors-metada'
 export async function generateStaticParams() {
   // Dinamik URL-lar uchun kerak bo'lsa, parametrlar ro'yxatini qaytaradi
   return [
-    { slug: 'rustam' },
-    { slug: 'another-case' },
+    { slug: 'doctor' },
+    { slug: 'another-doctor' },
   ];
 }
 
@@ -24,16 +24,16 @@ export async function generateMetadata({ params }) {
   const meta = doctorsMetada[slug] || doctorsMetada.default;
 
   return {
-    title: meta.title,
-    description: meta.description,
+    title: meta?.title,
+    description: meta?.description,
     openGraph: {
-      title: meta.title,
-      description: meta.description,
-      url: meta.url,
+      title: meta?.title,
+      description: meta?.description,
+      url: meta?.url,
       type: 'website',
     },
     alternates: {
-      canonical: meta.url,
+      canonical: meta?.url,
     },
   };
 }
