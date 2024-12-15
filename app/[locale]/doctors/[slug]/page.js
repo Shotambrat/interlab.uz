@@ -6,7 +6,7 @@ import { client } from '@/sanity/lib/client'
 import Application from '../../components/Application'
 import Services from '../../components/Doctors/Services'
 import Address from '../../components/Doctors/Address'
-import { doctorsMetada } from '@/constants/doctors-metada'
+import { doctorsMetada } from './data'
 
 
 
