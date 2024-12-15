@@ -19,21 +19,22 @@ export async function generateStaticParams() {
 }
 
 // Meta ma'lumotlarni dinamik yaratish
+// Update the generateMetadata function
 export async function generateMetadata({ params }) {
   const { slug } = params;
   const meta = doctorsMetada[slug] || doctorsMetada.default;
 
   return {
-    title: meta?.title,
-    description: meta?.description,
+    title: meta?.title || doctorsMetada.default.title,
+    description: meta?.description || doctorsMetada.default.description,
     openGraph: {
-      title: meta?.title,
-      description: meta?.description,
-      url: meta?.url,
+      title: meta?.title || doctorsMetada.default.title,
+      description: meta?.description || doctorsMetada.default.description,
+      url: meta?.url || doctorsMetada.default.url,
       type: 'website',
     },
     alternates: {
-      canonical: meta?.url,
+      canonical: meta?.url || "https://interlab.uz",
     },
   };
 }
