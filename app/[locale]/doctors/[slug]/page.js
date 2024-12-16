@@ -1,5 +1,3 @@
-// app/[locale]/doctors/[slug]/page.js
-import React from 'react'
 import DoctorItemHead from '@/app/[locale]/components/Doctors/DoctorItemHead'
 import DoctorItemInfo from '@/app/[locale]/components/Doctors/DoctorItemInfo'
 import { client } from '@/sanity/lib/client'
@@ -7,7 +5,6 @@ import Application from '../../components/Application'
 import Services from '../../components/Doctors/Services'
 import Address from '../../components/Doctors/Address'
 import { doctorsMetada } from './data'
-
 
 
 export async function generateStaticParams() {
@@ -27,12 +24,12 @@ export async function generateMetadata({ params }) {
 
   
   return {
-    title: meta?.title || doctorsMetada.default.title,
-    description: meta?.description || doctorsMetada.default.description,
+    title: meta?.title || "INTERMED INNOVATION",
+    description: meta?.description || "INTERMED INNOVATION",
     openGraph: {
-      title: meta?.title || doctorsMetada.default.title,
-      description: meta?.description || doctorsMetada.default.description,
-      url: meta?.url || doctorsMetada.default.url,
+      title: meta?.title || "INTERMED INNOVATION",
+      description: meta?.description || "INTERMED INNOVATION",
+      url: meta?.url || "https://interlab.uz",
       type: 'website',
     },
     alternates: {
@@ -64,8 +61,9 @@ export default async function DoctorPage({ params }) {
       }
     }`,
     { slug },
-    { cache: 'no-store' }
-  )
+  );
+  console.log(doctor);
+  
 
   if (!doctor) {
     return <div>Доктор не найден</div>
