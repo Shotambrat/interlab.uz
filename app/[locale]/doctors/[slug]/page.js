@@ -4,25 +4,16 @@ import { client } from '@/sanity/lib/client'
 import Application from '../../components/Application'
 import Services from '../../components/Doctors/Services'
 import Address from '../../components/Doctors/Address'
-import { doctorsMetada } from './data'
+import { doctorsMetada } from '@/constants/doctors-metada'
 
 
-export async function generateStaticParams() {
-  // Dinamik URL-lar uchun kerak bo'lsa, parametrlar ro'yxatini qaytaradi
-  return [
-    { slug: 'doctor' },
-    { slug: 'another-doctor' },
-  ];
-}
 
-// Meta ma'lumotlarni dinamik yaratish
-// Update the generateMetadata function
+
 export async function generateMetadata({ params }) {
   const { slug } = params;
   const normalizedSlug = slug.trim().toLowerCase();
-  const meta = doctorsMetada[normalizedSlug] || doctorsMetada.default;
+  const meta = doctorsMetada[normalizedSlug];
 
-  
   return {
     title: meta?.title || "INTERMED INNOVATION",
     description: meta?.description || "INTERMED INNOVATION",
@@ -62,7 +53,6 @@ export default async function DoctorPage({ params }) {
     }`,
     { slug },
   );
-  console.log(doctor);
   
 
   if (!doctor) {
@@ -72,11 +62,15 @@ export default async function DoctorPage({ params }) {
   return (
     <div className='px-2 w-full bg-white'>
       <div className='w-full max-w-[1400px] flex flex-col gap-32 mx-auto py-12 pb-32'>
-        <DoctorItemHead doctor={doctor} locale={locale} />
-        <DoctorItemInfo doctor={doctor} locale={locale} />
-        <Services services={doctor.services} locale={locale} />
-        <Address />
-        <Application />
+        {doctor && (
+          <>
+            <DoctorItemHead doctor={doctor} locale={locale} />
+            <DoctorItemInfo doctor={doctor} locale={locale} />
+            <Services services={doctor.services} locale={locale} />
+            <Address />
+            <Application />
+          </>
+        )}
       </div>
     </div>
   )
