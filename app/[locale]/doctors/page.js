@@ -64,11 +64,10 @@ export const metadata = {
 
 
 
-
 export default async function HomePage({ params }) {
   // Fetching doctor data from Sanity
-  const doctors = await client.fetch(`*[_type == "doctor"]` ,  { cache: 'no-store' })
-
+  const doctors = await client.fetch(`*[_type == "doctors"]` ,  { cache: 'no-store' })
+  console.log(doctors)
   return (
     <>
  <Head>
