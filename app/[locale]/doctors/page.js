@@ -66,8 +66,7 @@ export const metadata = {
 
 export default async function HomePage({ params }) {
   // Fetching doctor data from Sanity
-  const doctors = await client.fetch(`*[_type == "doctor"]` ,  { cache: 'no-store' })
-  console.log(doctors , "DOCTORS")
+  
   return (
     <>
  <Head>
@@ -81,7 +80,7 @@ export default async function HomePage({ params }) {
       </Head>
 <div>
       <DoctorsBanner locale={params.locale} />
-      <Filter doctors={doctors} locale={params.locale} />
+      <Filter  locale={params.locale} />
     </div>
     </>
    

@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState , useEffect } from 'react'
 import DoctorCard from '@/app/[locale]/components/Doctors/DoctorCard'
 import Application from '@/app/[locale]/components/Application'
 import Blog from '@/app/[locale]/components/Blog'
@@ -13,10 +13,34 @@ function urlFor(source) {
   return builder.image(source)
 }
 
-export default function Filter({ doctors, locale }) {
+export default function Filter({ locale }) {
+  const [data , setData] = useState(null)
   const t = useTranslations()
   const [query, setQuery] = useState('') // State to store the search query
-  const [filteredDoctors, setFilteredDoctors] = useState(doctors) // State to store filtered doctors
+  const [filteredDoctors, setFilteredDoctors] = useState([]) // State to store filtered doctors
+
+
+
+
+ // Fetch doctors data using useEffect
+ useEffect(() => {
+  async function fetchDoctors() {
+    try {
+      const result = await client.fetch(`*[_type == "doctor"]`, {
+        cache: 'no-store' // Prevent caching of the data
+      })
+      setData(result)
+      setFilteredDoctors(result) // Set the initial filtered doctors as all doctors
+    } catch (error) {
+      console.error('Error fetching doctors:', error)
+    }
+  }
+
+  fetchDoctors()
+}, [])  // Empty dependency array ensures this runs once after the component mounts
+
+
+
 
   // Handle search input change
   const handleSearchChange = e => {
@@ -25,18 +49,18 @@ export default function Filter({ doctors, locale }) {
 
     // Filter doctors based on the search query
     if (value) {
-      const filtered = doctors.filter(
+      const filtered = data.filter(
         doctor =>
           doctor.name[locale].toLowerCase().includes(value) ||
           doctor.position[locale].join(', ').toLowerCase().includes(value)
       )
       setFilteredDoctors(filtered)
     } else {
-      setFilteredDoctors(doctors) // Reset to the original list when query is empty
+      setFilteredDoctors(data) // Reset to the original list when query is empty
     }
   }
 
-  console.log('Filtered', doctors)
+  console.log('Filtered DATA SSS', data)
 
   return (
     <div className='w-full h-auto bg-white max-mdl:px-4 pb-24 pt-12'>
