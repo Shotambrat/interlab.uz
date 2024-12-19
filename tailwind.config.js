@@ -18,9 +18,7 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
-      fontFamily: {
-        sans: ['Arial', 'sans-serif'],
-      },
+     
       colors: {
         modalBg: 'rgba(0, 0, 0, 0.5)',
         serviceBg: '#FFEFEF'

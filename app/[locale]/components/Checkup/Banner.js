@@ -13,10 +13,10 @@ export default function Banner({ title, icon, description, color }) {
       {onlineReq && <OnlineReq setState={setOnlineReq} />}
       <div className='w-full px-2 flex flex-col mdx:flex-row overflow-hidden justify-between items-center max-w-[1440px] mx-auto'>
         <div className='text-left mdx:py-16 max-w-md mt-[25px] mdx:mt-0'>
-          <h1 className='text-[27px] mdx:text-5xl font-bold'>
+          <h1 className='text-[25px] mdx:text-5xl font-bold'>
             {title[locale]}
           </h1>
-          <p className='mt-4 text-lg'>{description[locale]}</p>
+          <p className='mt-4 text-[15px] mdl:text-lg'>{description[locale]}</p>
           <button
             onClick={() => setOnlineReq(true)}
             className=' hidden lg:block mt-6 px-16 py-3 bg-white text-xl  text-black rounded-full'

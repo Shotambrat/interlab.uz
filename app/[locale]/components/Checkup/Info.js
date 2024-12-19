@@ -1,7 +1,5 @@
 'use client'
 
-import UpRedIcon from '@/public/svg/arrow-right-up.svg'
-import DownBlckIcon from '@/public/svg/arrow-right-down-blck.svg'
 import Image from 'next/image'
 import { Transition } from '@headlessui/react'
 import { useState } from 'react'
@@ -59,7 +57,7 @@ const AccordionItem = ({ title, isOpen, onClick, children }) => {
     <div className='border-t border-b border-solid border-neutral-200'>
       <summary
         onClick={onClick}
-        className={`flex gap-5 justify-center items-center py-7 ${isOpen ? 'text-red-400' : 'text-black'} text-xl max-md:flex-wrap max-md:max-w-full cursor-pointer`}
+        className={`flex gap-5 justify-center items-center py-7 ${isOpen ? 'text-red-400' : 'text-black'} text-xl max-md:max-w-full cursor-pointer`}
       >
         <span className='flex-auto'>{title}</span>
         {isOpen ? (
@@ -126,7 +124,7 @@ export default function Info() {
     <section className='flex gap-14 justify-between slg:flex-nowrap max-slg:flex-col flex-wrap max-md:max-w-full'>
       <div className='flex flex-1 flex-col w-full'>
         <div className='pb-8 flex flex-col gap-4'>
-          <h2 className='text-4xl font-semibold w-full max-w-[400px]'>
+          <h2 className='text-[30px] mdl:text-4xl font-semibold w-full max-w-[400px]'>
             {locale === 'ru'
               ? 'Комплексная забота о вашем здоровье'
               : 'Sizning salomatligingizni kompleks parvarishlash'}
@@ -155,17 +153,7 @@ export default function Info() {
           </AccordionItem>
         ))}
 
-        {/* <Link href={`/${locale}/instructions`} className="flex flex-col justify-center py-px text-2xl text-red-400 border-т border-б border-solid border-neutral-200 max-md:max-w-full">
-          <div className="flex gap-3.5 py-7 pr-20 max-md:flex-wrap max-md:pr-5">
-            <span>Посмотреть все</span>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/df01962f1b2f9e82d103d70313443681fbb58f620a1804fe139f6fa84420e8e6?apiKey=e791e0f42eab4556ac944da69358f29b&"
-              className="shrink-0 aspect-square w-[30px]"
-              alt="View all icon"
-            />
-          </div>
-        </Link> */}
+      
       </div>
       <div className='flex flex-1 flex-col self-start max-md:max-w-full'>
         <Image

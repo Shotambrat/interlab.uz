@@ -60,7 +60,6 @@ export default function Filter({ locale }) {
     }
   }
 
-  console.log('Filtered DATA SSS', data)
 
   return (
     <div className='w-full h-auto bg-white max-mdl:px-4 pb-24 pt-12'>

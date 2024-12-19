@@ -8,7 +8,7 @@ const CheckupOverview = ({ stages }) => {
   return (
     <div className='px-[16px] mdx:px-[20px] lg:px-[40px]'>
       <p className='text-[27px] mdx:text-[40px] font-bold text-[#151515]'>
-        Что покажут обследования
+        {locale === 'ru' ? 'Что покажут обследования' : locale === 'uz' ? ' Checkupda nima ko`rsatiladi' : 'What will the examinations show'}
       </p>
       <div className='mt-[25px] mdx:mt-[50px]'>
         {stages.map((item, index) => (

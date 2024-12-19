@@ -8,10 +8,10 @@ export default function AboutBanner() {
 
   return (
     <>
-      <div className="w-full h-screen-70 lg:h-screen-90 relative lg:flex-row max-slg:gap-5 flex flex-col pt-10 lg:pt-0">
+      <div className="w-full h-screen-70 lg:h-[600px] relative lg:flex-row max-slg:gap-5 flex flex-col pt-10 lg:pt-0 ">
         <div className="relative w-full flex flex-col  lg:w-[50%] lg:h-full  lg:justify-center  mx-auto px-4 ">
           <div className='lg:mx-auto flex flex-col lg:gap-[10px] lg:mt-[-70px]'>
-          <h1 className="text-5xl  max-mdx:text-3xl text-rose-400 font-bold w-full lg:max-w-[560px]">
+          <h1 className="text-[40px]  max-mdx:text-[25px] text-rose-400 font-bold w-full lg:max-w-[560px]">
             {t("About.title")}{" "}
             <span className="text-black">{t("About.subtitle")}</span>
           </h1>

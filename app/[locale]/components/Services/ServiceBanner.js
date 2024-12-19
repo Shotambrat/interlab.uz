@@ -12,12 +12,12 @@ export default function ServiceBanner() {
     <div className="w-full flex flex-col bg-[#FFEFEF] bg-opacity-40">
       <div className="lg:grid lg:grid-cols-2 lg:items-center">
         <div className="px-[16px] 2xl:ml-[15%] lg:pt-12 pt-[20px]">
-          <h1 className="text-[27px] leading-tight md:text-[48px]  lg:text-[45px] font-bold mt-2">
+          <h1 className="text-[25px] leading-tight md:text-[48px]  lg:text-[45px] font-bold mt-2">
             {t("Services.title")}
             <br />
             <span className="text-red-400 font-semibold">{t("Services.subtitle")}</span>
           </h1>
-          <p className="text-[#5B5B5B] text-[14px] md:text-[18px] lh lg:text-[20px] mt-[12px]">
+          <p className="text-[#5B5B5B] text-[15px] md:text-[18px] lh lg:text-[20px] mt-[12px]">
             {t("Services.description")}
           </p>
         </div>

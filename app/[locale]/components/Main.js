@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Instruction from '@/app/[locale]/components/Instuction'
-
+import { FaPhoneAlt } from "react-icons/fa";
 import { Swiper, SwiperSlide } from 'swiper/react' // Swiper va SwiperSlide import qilinadi
 import 'swiper/css' // Swiper uchun asosiy css
 import 'swiper/css/navigation' // Navigation uchun css
@@ -167,11 +167,16 @@ function Main({ params }) {
                   </div>
                 </div>
               </div>
-              <div className='flex slg:ml-5 w-full slg:w-6/12 max-md:ml-0 max-md:w-full'>
+              <div className='flex flex-col w-full slg:w-2/5 max-md:ml-0 max-md:w-full'>
+              <div className='md:text-xl mb-[-15px] text-sm text-zinc-500 max-md:max-w-full slg:mb-[10px] md:mb-[10px]'>
+                      {t('Main.ContactUs.phone-for-call')}
+                    </div>
+              <div className='flex slg:ml-5 w-full  max-md:ml-0 max-md:w-full'>
+              
                 <div className='flex flex-col justify-between grow max-md:mt-5 max-md:max-w-full'>
-                  <div className='flex flex-col pt-1.5 max-md:max-w-full mb-2'>
-                    <div className='md:text-2xl text-lg text-neutral-900 font-medium max-md:max-w-full'>
-                      1){' '}
+                  <div className='flex flex-col gap-[8px] pt-1.5 max-md:max-w-full mb-2'>
+                    <div className='md:text-2xl text-lg text-neutral-900 font-medium max-md:max-w-full flex gap-[8px] slg:gap-[10px] flex-row flex-nowrap items-center'>
+                    <FaPhoneAlt className='w-[18px] h-[18px] slg:w-[20px] slg:h-[20px]' />{' '}
                       <a
                         onClick={async () => {
                           try {
@@ -191,8 +196,8 @@ function Main({ params }) {
                         1156
                       </a>
                     </div>
-                    <div className='md:text-2xl text-lg text-neutral-900 font-medium max-md:max-w-full'>
-                      2){' '}
+                    <div className='md:text-2xl text-lg text-neutral-900 font-medium max-md:max-w-full flex gap-[8px]  slg:gap-[10px] flex-row flex-nowrap items-center'>
+                    <FaPhoneAlt className='w-[18px] h-[18px] slg:w-[20px] slg:h-[20px]' />{' '}
                       <a
                         onClick={async () => {
                           try {
@@ -212,8 +217,8 @@ function Main({ params }) {
                          78 148 22 88
                       </a>
                     </div>
-                    <div className='md:text-2xl text-lg text-neutral-900 font-medium max-md:max-w-full'>
-                      3){' '}
+                    <div className='md:text-2xl text-lg text-neutral-900 font-medium max-md:max-w-full flex gap-[8px] slg:gap-[10px] flex-row flex-nowrap items-center'>
+                    <FaPhoneAlt className='w-[18px] h-[18px] slg:w-[20px] slg:h-[20px]' />{' '}
                       <a
                         onClick={async () => {
                           try {
@@ -233,9 +238,7 @@ function Main({ params }) {
                          97 757 88 22
                       </a>
                     </div>
-                    <div className='md:text-xl text-sm text-zinc-500 max-md:max-w-full'>
-                      {t('Main.ContactUs.phone-for-call')}
-                    </div>
+                   
                   </div>
                   <hr />
                   <div className='flex flex-col pt-1.5 pb-3 mt-2 border-neutral-200 max-md:max-w-full'>
@@ -267,6 +270,8 @@ function Main({ params }) {
                   </div>
                 </div>
               </div>
+              </div>
+             
               <div className='flex slg:hidden gap-2 mt-11 max-w-full text-sm font-bold text-center w-[466px] max-md:flex-wrap max-md:mt-10'>
                 <a
                   href='tel:+998781482288'
@@ -437,7 +442,7 @@ function Main({ params }) {
 
               <div className='mdx:hidden'>
                 <Swiper
-                  slidesPerView={1.2}
+                  slidesPerView={1}
                   centeredSlides={true}
                   spaceBetween={20}
                   pagination={{

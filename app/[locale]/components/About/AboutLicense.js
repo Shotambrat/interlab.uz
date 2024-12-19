@@ -48,10 +48,10 @@ const AboutLicense = ({ locale }) => {
     setModal(true);
   };
 
-  const closeModal = () => {
-    setModal(false);
-    setSelectedLicense(null);
-  };
+  // const closeModal = () => {
+  //   setModal(false);
+  //   setSelectedLicense(null);
+  // };
 
   if (!licenses) return <p>Загрузка...</p>;
 
@@ -79,7 +79,7 @@ const AboutLicense = ({ locale }) => {
 
       <Slider {...settings}>
         {licenses.map((license, index) => (
-          <div key={index} className="slide-item relative overflow-hidden lg:max-h-[250px]" onClick={() => openModal(license)}>
+          <div key={index} className="slide-item  h-[300px] relative overflow-hidden lg:max-h-[250px]" onClick={() => openModal(license)}>
             {/* Проверяем, есть ли URL изображения */}
             {license.photo?.asset?.url ? (
               <Image
@@ -96,13 +96,6 @@ const AboutLicense = ({ locale }) => {
           </div>
         ))}
       </Slider>
-
-      {/* {modal && selectedLicense && (
-        <LicenseModal
-          data={selectedLicense}
-          close={closeModal}
-        />
-      )} */}
 
       <Link href={`/${locale}/about/licences`} className="w-full flex justify-center">
         <motion.button className="flex gap-2 justify-center px-16 py-3.5 mt-10 text-base font-bold text-center text-red-400 border border-red-400 rounded-[100px]">
