@@ -20,7 +20,7 @@ export default function CallToAction({ locale }) {
     window.location.href = `/${locale}/addresses`
   }
   const handleCkdlClick = () => {
-    window.location.href = `https://ckdl.interlab.uz/ru`
+    window.location.href = `https://ckdl-interlab.uz`
   }
 
   const handleContactsClick = () => {
