@@ -1,5 +1,4 @@
 import AboutLicense from '../components/About/AboutLicense'
-import Blog from '../components/Blog'
 import AboutBanner from '../components/Ckdl/About'
 import WhyWe from '../components/Ckdl/WhyWe'
 import { useTranslations } from 'next-intl'

@@ -2,13 +2,11 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import lineForm from "@/public/svg/application/illustration.svg";
-import Arrow_down from "@/public/svg/arrow-down.svg";
 import { useLocale, useTranslations } from "next-intl";
 import { Form, Input, Button, DatePicker, message } from "antd";
 import { useState } from "react";
 import axios from "axios";
 import PhoneInput from "react-phone-input-2";
-import moment from "moment"; // Import moment to handle date formatting
 
 const Application = () => {
   const t = useTranslations("Application");
@@ -51,7 +49,6 @@ const Application = () => {
 
       if (response.status === 200) {
         message.success("Заявка успешно отправлена!");
-        // Очистка формы после успешной отправки
         setPhone("");
         setLoading(false);
         form.resetFields();
@@ -68,7 +65,6 @@ const Application = () => {
 
   return (
     <div className="relative overflow-hidden py-5 lg:py-10 px-4 lg:pr-10 bg-rose-50 rounded-[30px] mdx:rounded-[50px] max-md:max-w-full">
-      {/* SVG Illustration at the top */}
       <Image
         src={lineForm}
         width={1000}
@@ -84,9 +80,7 @@ const Application = () => {
               {t("title")}
             </h2>
             <p className="text-lg text-neutral-400">{t("description")}</p>
-            {/* <p className="px-6 py-3 rounded-3xl bg-red-400 self-start font-medium mt-4 text-white">
-              {t("sale-info")}
-            </p> */}
+           
           </div>
         </div>
         <div className="flex flex-col w-[32%] max-md:ml-0 max-slg:w-full">
@@ -125,7 +119,6 @@ const Application = () => {
               />
             </Form.Item>
 
-            {/* Birth Date Picker */}
             <Form.Item
               name="birthDate"
               rules={[{ required: true, message: "Выберите дату рождения" }]}

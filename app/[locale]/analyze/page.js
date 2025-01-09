@@ -3,7 +3,6 @@ import Instuction from '@/app/[locale]/components/Instuction'
 import Head from 'next/head'
 
 import Filter from '@/app/[locale]/components/Analyze/Filter'
-import SearchComp from '../components/SearchComp'
 import { useLocale } from 'next-intl'
 
 

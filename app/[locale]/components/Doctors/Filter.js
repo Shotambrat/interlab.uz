@@ -68,7 +68,7 @@ export default function Filter({ locale }) {
           <SearchComp
             query={query}
             onChange={handleSearchChange}
-            placeholder={ locale=== 'ru' ? "Введите имя или фамилию врача" : "Shifokorning ismi yoki familiyasini kiriting."}
+            placeholder={ locale === 'ru' ? "Введите имя или фамилию врача" : "Shifokorning ismi yoki familiyasini kiriting."}
           />
         </div>
         <div className='w-full max-w-[1440px] mx-auto grid grid-cols-1 mdx:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
@@ -77,10 +77,10 @@ export default function Filter({ locale }) {
               <div key={index} className=' flex justify-center'>
                 <DoctorCard
                   locale={locale}
-                  name={doctor.name[locale] || doctor.name.ru}
+                  name={doctor.name[locale] || doctor.name.ru || '____'}
                   specialty={
                     doctor.position[locale].join(', ') ||
-                    doctor.position.ru.join(', ')
+                    doctor.position?.[locale].join(', ')
                   }
                   imageSrc={urlFor(doctor.photo).url()}
                   slug={doctor.slug.current}

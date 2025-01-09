@@ -1,7 +1,5 @@
-// app/[locale]/doctors.page.js
 import DoctorsBanner from '@/app/[locale]/components/Doctors/DoctorsBanner'
 import Filter from '@/app/[locale]/components/Doctors/Filter'
-import { client } from '@/sanity/lib/client'
 import Head from 'next/head';
 
 
@@ -65,7 +63,6 @@ export const metadata = {
 
 
 export default async function HomePage({ params }) {
-  // Fetching doctor data from Sanity
   
   return (
     <>
