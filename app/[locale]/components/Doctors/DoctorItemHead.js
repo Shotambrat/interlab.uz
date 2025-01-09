@@ -19,6 +19,8 @@ export default function DoctorItemHead({ doctor, locale }) {
   const t = useTranslations()
   const [contactWithUs, setContactWithUs] = useState(false)
   const [onlineReq, setOnlineReq] = useState(false)
+
+
   return (
     <div className='w-full flex flex-col items-center mdl:flex-row slg:justify-start gap-8 h-auto mdl:h-[400px]'>
       {contactWithUs ? <ContactWithUs setState={setContactWithUs} /> : <></>}
@@ -33,10 +35,10 @@ export default function DoctorItemHead({ doctor, locale }) {
       <div className='flex flex-col justify-between max-mdl:w-full h-full pt-8 max-mdl:gap-5'>
         <div className='flex flex-col gap-5'>
           <h1 className='font-bold text-2xl mdl:text-4xl'>
-            {doctor.name[locale] || doctor.name.ru}
+            {doctor?.name[locale] || doctor?.name?.ru || doctor?.name?.uz || "_____"}
           </h1>
           <div className='flex gap-2 flex-wrap xl:flex-nowrap'>
-            {doctor.position[locale].map((elem, i) => (
+            {doctor?.position[locale].map((elem, i) => (
               <div
                 key={i}
                 className='px-4 py-2 bg-red-50 text-red-400 rounded-full'
