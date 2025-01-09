@@ -1,6 +1,5 @@
 'use client'
 import Image from 'next/image'
-import LinkYakor from '@/app/[locale]/components/LinkYakor'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import OnlineReq from '@/app/[locale]/components/Modals/OnlineReq'

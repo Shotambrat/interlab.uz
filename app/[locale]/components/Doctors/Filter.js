@@ -6,15 +6,16 @@ import Blog from '@/app/[locale]/components/Blog'
 import imageUrlBuilder from '@sanity/image-url'
 import { client } from '@/sanity/lib/client'
 import SearchComp from '../SearchComp'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 const builder = imageUrlBuilder(client)
 function urlFor(source) {
   return builder.image(source)
 }
 
-export default function Filter({ locale }) {
+export default function Filter() {
   const [data , setData] = useState(null)
+  const locale = useLocale()
   const t = useTranslations()
   const [query, setQuery] = useState('') // State to store the search query
   const [filteredDoctors, setFilteredDoctors] = useState([]) // State to store filtered doctors
@@ -89,7 +90,7 @@ export default function Filter({ locale }) {
             ))
           ) : (
             <p className='text-center text-neutral-500'>
-              {t('No results found')}
+             {locale === 'ru' ? "Ничего не найдено" : "Hech nima topilmadi"}
             </p>
           )}
         </div>

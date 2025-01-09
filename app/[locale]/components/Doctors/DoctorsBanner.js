@@ -2,7 +2,7 @@ import doctorsBanner from "@/public/images/doctors-manner.png";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-export default function ServiceBanner({ locale }) {
+export default function ServiceBanner() {
   const t = useTranslations();
   return (
     <>

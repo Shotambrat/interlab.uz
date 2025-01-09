@@ -1,10 +1,11 @@
-// DoctorItemInfo.js
+"use client"
 import React from "react";
 import DoctorInfoItem from "./DoctorInfoItem";
 import { useTranslations } from "next-intl";
 
 export default function DoctorItemInfo({ doctor, locale }) {
   const t = useTranslations("Doctors")
+  
     const infoData = [
       {
         title: t('experience'),

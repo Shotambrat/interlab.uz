@@ -95,12 +95,7 @@ export default function AboutPage({ params }) {
 
      <main className='w-full h-auto bg-white pb-24'>
       <AboutBanner />
-      {/* <AboutInfo /> */}
-      {/* <AboutService /> */}
-      {/* <div className="px-2">
-        <AboutAchiev />
-
-      </div> */}
+     
       <MainServices params={params} />
       <div className='mb-24 px-2'>
         <About />
