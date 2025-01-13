@@ -12,7 +12,7 @@ function AnalyzeBanner() {
         <div className="flex flex-col w-full mdl:max-w-[800px] text-left justify-center lg:pl-[80px] xl:pl-[25px]">
           <h1 className=" text-[25px] mdl:text-[36px] font-bold text-neutral-900 mb-4">
             
-          {locale === 'ru' ? 'Лабораторные анализы в Interlab' : 'Interlab laboratoriya tahlillari'}
+          {locale === 'ru' ? 'Лабораторные анализы в INTERMED' : 'INTERMED laboratoriya tahlillari'}
 
             </h1>
           <p className="text-neutral-600 font-medium leading-6 text-[15px] mdl:text-lg">
