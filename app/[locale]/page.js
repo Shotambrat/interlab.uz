@@ -1,8 +1,9 @@
-import Main from '@/app/[locale]/components/Main'
-import Head from 'next/head'
+import Main from "@/app/[locale]/components/Main";
+import Head from "next/head";
 
 export const metadata = {
-  title: 'Медицинский центр INTERMED в Ташкенте – Современные медицинские услуги для всей семьи',
+  title:
+    "Медицинский центр INTERMED в Ташкенте – Современные медицинские услуги для всей семьи",
   description: `INTERMED – медицинский центр в Ташкенте, где забота о здоровье становится приоритетом. Диагностика, консультации опытных врачей и современное оборудование. Узнайте больше на сайте!  Добро пожаловать в медицинский центр *INTERMED*! Мы – современное медицинское учреждение в Ташкенте, которое заботится о вашем здоровье и благополучии. Наши главные ценности – профессионализм, индивидуальный подход к каждому пациенту и применение самых современных технологий.
 
 Мы понимаем, насколько важно своевременное выявление и лечение заболеваний. Именно поэтому в *INTERMED* вы найдете широкий спектр медицинских услуг, включающий консультации узких специалистов, диагностику, лабораторные анализы и многое другое.
@@ -60,25 +61,28 @@ export const metadata = {
 Забота о вашем здоровье – наша миссия
 
 INTERMED – это место, где вы можете чувствовать себя в безопасности, зная, что ваше здоровье в руках профессионалов. Мы понимаем, что каждому пациенту требуется индивидуальный подход, поэтому наша команда делает все возможное, чтобы найти оптимальное решение для вашего лечения.`,
-  keywords: 'Широкий спектр услуг , Современные технологии , Комфорт и забота о пациентах ,  Профилактика и ранняя диагностика , Образовательные программы для пациентов ,  Удобное расположение и доступность ,  Международные стандарты качества , Забота о вашем здоровье – наша миссия ',
+  keywords:
+    "Широкий спектр услуг , Современные технологии , Комфорт и забота о пациентах ,  Профилактика и ранняя диагностика , Образовательные программы для пациентов ,  Удобное расположение и доступность ,  Международные стандарты качества , Забота о вашем здоровье – наша миссия ",
+  alternates: {
+    canonical: "https://interlab.uz",
+  },
 };
-
-
-
 
 export default async function HomePage({ params }) {
   return (
     <div>
       <Head>
-      <title>{metadata.title}</title>
+        <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://interlab.uz" />
+        <link rel="canonical" href="https://interlab.uz" />
       </Head>
       <Main params={params} />
     </div>
-  )
+  );
 }
