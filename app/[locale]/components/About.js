@@ -51,7 +51,7 @@ export default function About() {
             <div className="grid grid-cols-2 lg:grid-rows-1 grid-rows-2 lg:grid-cols-4 gap-0">
               <div className="max-lg:border-b border-r lg:border-r-2 border-gray-300 flex flex-col lg:items-center items-center justify-center">
                 <p className="text-6xl max-mdx:text-[20px] max-mdx:leading-5 font-bold leading-6  my-auto text-center">
-                  800+ <br />
+                  1000+ <br />
                   <span className="text-gray-500 text-lg max-mdx:text-sm font-medium">
                     {locale === 'ru' ? 'видов анализов' : 'tahlillar turi'}
                   </span>

@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 
 export default function ServiceBanner() {
   const t = useTranslations();
+  
   return (
     <>
       <div className="relative bg-rose-50 pt-10 px-2">
