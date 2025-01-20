@@ -14,7 +14,6 @@ import Blog from '@/app/[locale]/components/Blog'
 import DoctorCard from '@/app/[locale]/components/DoctorsCardMain'
 import ContactWithUs from '@/app/[locale]/components/Modals/ContactWithUs'
 
-import PopularAnalyze from './PopularAnalyze'
 import BannerMain from '@/app/[locale]/components/BannerMain'
 import MainMap from '@/app/[locale]/components/MainMap'
 import ServiceCard from '@/app/[locale]/components/ServiceCard'
@@ -82,6 +81,7 @@ function Main({ params }) {
     fetchDoctors()
   }, [])
 
+
   useEffect(() => {
     const fetchServices = async () => {
       try {
@@ -114,13 +114,10 @@ function Main({ params }) {
     
       {contactWithUs ? <ContactWithUs setState={setContactWithUs} /> : <></>}
 
-      {/* <HouseCallSuccess /> */}
-      {/* <HouseCall /> */}
       <div className='flex flex-col bg-white gap-12 lg:gap-24 overflow-x-hidden'>
         <main className='flex flex-col justify-between relative self-center w-full max-md:max-w-full h-auto slg:h-screen-90'>
           <BannerMain params={params} />
         </main>
-        {/* <CallToAction locale={params.locale} /> */}
 
         <div className='flex flex-col self-center max-mdx:mt-12 mt-24 w-full'>
           <div className='max-md:max-w-full max-w-[1440px] px-2 mx-auto'>
@@ -401,22 +398,6 @@ function Main({ params }) {
             <MainMap />
           </div>
 
-          {/* <h2 className="mt-24 text-3xl font-bold text-neutral-900 max-md:max-w-full">
-            {t("Main.Sales.title")}
-          </h2>
-          <Sale locale={params.locale} />
-          <a
-            href={`/${params.locale}/blogs`}
-            className="flex gap-2 justify-center self-center px-16 py-3.5 mt-9 text-base font-bold text-center text-red-400 border border-red-400 border-solid rounded-[100px] "
-          >
-            <span className="my-auto">{t("Main.Sales.all")}</span>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/9d858dea97bb716ac0dba9d09749ab621dbd0b3df5fbd758926ae17f2daf60f0?apiKey=e791e0f42eab4556ac944da69358f29b&"
-              className="shrink-0 aspect-square w-[23px]"
-              alt="Arrow icon"
-            />
-          </a> */}
           <div className='max-w-[1440px] mx-auto px-2 w-full'>
             <div className='flex flex-col mt-24 max-w-full w-[588px]'>
               <h2 className='text-3xl mdx:text-4xl font-bold text-neutral-900 max-md:max-w-full mb-0'>
@@ -480,9 +461,7 @@ function Main({ params }) {
               </a>
             </div>
           </div>
-          {/* <div className="mt-24 w-full px-2 max-w-[1440px] mx-auto">
-            <PopularAnalyze params={params} />
-          </div> */}
+         
           <div className='mt-52 max-md:mt-24 px-2 w-full max-w-[1440px] mx-auto'>
             <Instruction locale={locale} />
           </div>
@@ -490,53 +469,7 @@ function Main({ params }) {
             <About />
           </div>
 
-          {/* <section className="mt-52 max-md:mt-24 w-full">
-            <div className="flex gap-5 flex-col lg:flex-row max-md:gap-0 ">
-              <h2 className="text-3xl font-bold lg:hidden block text-neutral-900 max-md:max-w-full">
-                {t("Main.About.title")}
-              </h2>
-              <div className="flex flex-col lg:w-6/12 max-md:ml-0 w-full">
-                <Image
-                  src='/images/interlab-logo.jpg'
-                  width={1000}
-                  height={1000}
-                  alt="Interlab logo"
-                  className="w-full h-full rounded-[45px]"
-                />
-              </div>
-              <div className="flex flex-col justify-between ml-5 lg:w-6/12 max-md:ml-0 w-full">
-                <div className="flex flex-col font-bold max-md:mt-[25px] max-md:max-w-full slg:max-w-[568px]">
-                  <h2 className="text-4xl hidden lg:block text-neutral-900 max-md:max-w-full font-bold mb-0">
-                    {t("Main.About.title")}
-                  </h2>
-                  <p className="text-lg mt-5 text-zinc-600 font-medium max-md:max-w-full leading-5 slg:max-w-[508px]">
-                    {t("Main.About.description")
-                      .split("\n")
-                      .map((line, index) => (
-                        <React.Fragment key={index}>
-                          {line}
-                          <br />
-                        </React.Fragment>
-                      ))}
-                  </p>
-                </div>
-                <div className="flex gap-3 mt-8 text-base text-center max-md:flex-wrap max-md:max-w-full">
-                  <a
-                    href={`/${params.locale}/about`}
-                    className="justify-center self-start mdx:px-10 py-4 text-white bg-red-400 rounded-[100px] px-6 font-bold"
-                  >
-                    {t("Main.About.more")}
-                  </a>
-                  <a
-                    href={`/${params.locale}/about/licenses`}
-                    className="justify-center items-center px-16 py-4 text-red-400 whitespace-nowrap border border-red-400 border-solid rounded-[100px] max-md:px-10 font-bold"
-                  >
-                    {t("Main.About.license")}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section> */}
+        
           <div className='max-w-[1440px] px-2 mx-auto w-full'>
             <h2 className='mt-52 text-3xl font-bold text-neutral-900 max-md:mt-24 max-md:max-w-full mb-0'>
               {t('Main.Blogs.title')}

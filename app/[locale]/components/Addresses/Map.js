@@ -18,6 +18,8 @@ export default function Map() {
   const clinicsPlacemarksRef = useRef([])
   const locale = useLocale()
 
+
+  
   useEffect(() => {
     const loadYMaps = () => {
       return new Promise((resolve, reject) => {
@@ -26,7 +28,7 @@ export default function Map() {
           resolve(window.ymaps)
         } else {
           const script = document.createElement('script')
-          script.src = `https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=${YANDEX_API_KEY}`
+          script.src = `https://api-maps.yandex.ru/2.1/?apikey=${YANDEX_API_KEY}&lang=ru_RU`
           script.onload = () => {
             window.ymaps.ready(() => {
               ymapsRef.current = window.ymaps
@@ -208,9 +210,10 @@ export default function Map() {
     }
   }
 
+
   return (
     <div className='w-full relative'>
-      <div className='absolute h-[500px] z-10 max-xl:w-full max-xl:h-[450px]'>
+      <div className='absolute h-[50px] z-10  max-xl:w-full max-xl:h-[50px]'>
         {isSearchButtonVisible && (
           <button
             onClick={handleSearchClinics}
@@ -222,7 +225,7 @@ export default function Map() {
           </button>
         )}
       </div>
-      <div id='map' ref={scrollToMap} className='w-full z-0 h-[500px]'></div>
+      <div id='map' ref={scrollToMap} className='w-full  h-[500px]'></div>
       <Filter
         sortedClinics={clinicsLocations}
         onLocationClick={handleLocationClick}

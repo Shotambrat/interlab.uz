@@ -7,7 +7,6 @@ export default function ServiceCard({
   description,
   imageSrc,
   bgColor,
-  slug,
 }) {
   return (
     <Link
