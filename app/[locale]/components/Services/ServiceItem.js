@@ -24,7 +24,7 @@ export default function ServiceItems({ title, application , serviceName }) {
               {locale === 'ru' ? 'Позвонить' : 'Telefon qilish'}
             </Link>
             <button onClick={handleOpen} className=' text-[#FB6A68] rounded-full py-[12px] px-[16px] border border-[#FB6A68] mdl:py-[13px] mdl:px-[20px] font-bold'>
-              {locale === 'ru' ? 'Оставить заявку' : 'Ariza yuborish'}
+              {locale === 'ru' ? 'Оставить заявку' : 'Ariza yuborish '}
             </button>
           </div>
         )}

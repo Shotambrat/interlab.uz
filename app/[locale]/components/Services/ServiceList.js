@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState , useEffect } from 'react'
 import ServiceItems from './ServiceItem'
 import Application from '@/app/[locale]/components/Application'
 import Blog from '@/app/[locale]/components/Blog'
@@ -13,10 +13,16 @@ import { DownOutlined } from '@ant-design/icons'
 export default function ServiceList({ services, locale , categoriesProps }) {
   const t = useTranslations()
   const [servicesOpen, setServicesOpen] = useState(false)
-  const [categories, setCategories] = useState(categoriesProps) // Store category objects, not just strings
+  const [categories, setCategories] = useState([]) // Store category objects, not just strings
   const [selectedCategory, setSelectedCategory] = useState(null) // Default to "All services"
-  // Generate mobile category options
+  // Generate mobile cat egory options
 
+  console.log('am', categories)
+  useEffect(() => {
+    if (categoriesProps) {
+      setCategories(categoriesProps)
+    }
+  }, [categoriesProps]) // Перезапуск при изменении categoriesProps
 
   const mobileCategory = [
     { value: null, label: t('Services.all') }, // Option for "All services"

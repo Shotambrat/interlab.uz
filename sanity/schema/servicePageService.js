@@ -1,4 +1,3 @@
-// schemas/service.js
 export default {
     name: 'servicepage',
     title: 'Услуга внутренний  (Услугы)',

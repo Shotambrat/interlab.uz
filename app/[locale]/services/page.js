@@ -1,7 +1,6 @@
-import { client } from '@/sanity/lib/client'
 import ServiceBanner from '@/app/[locale]/components/Services/ServiceBanner'
-import ServiceList from '@/app/[locale]/components/Services/ServiceList'
 import Head from 'next/head'
+import { ServiceFetch } from '@/app/[locale]/components/Services/ServiceFetch';
 
 export const metadata = {
   title: 'Медицинские услуги в Ташкенте – диагностика, анализы, лечение',
@@ -110,22 +109,7 @@ export const metadata = {
 export default async function ServicePage({ params }) {
   const { locale } = params
 
-  // Fetch services with their category info
-  const services = await client.fetch(
-    `*[_type == "servicepage"][0..800]{
-      title,
-      category->{
-        _id,
-        title
-      }
-    }`,
-    { cache: 'no-store' }
-  )
-  
-  // Fetch only categories that have at least one service
-  const categories = await client.fetch(
-    `*[_type == "categorypage"]`, { cache: 'no-store' }
-  )
+
 
   return (
     <>
@@ -143,11 +127,7 @@ export default async function ServicePage({ params }) {
       </Head>
       <div>
       <ServiceBanner locale={locale} />
-      <ServiceList
-        services={services}
-        categoriesProps={categories}
-        locale={locale}
-      />
+      <ServiceFetch />
     </div>
     </>
     
