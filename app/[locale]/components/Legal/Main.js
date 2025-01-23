@@ -24,7 +24,7 @@ const MainLegal = () => {
       <div className='hidden lg:block'>
       <ProccesWork />
       </div>
-      <div className='block lg:hidden'>
+      <div className='block mt-[-100px] lg:hidden'>
       <MobileProccesWork />
       </div>
       <LegalProfits />
