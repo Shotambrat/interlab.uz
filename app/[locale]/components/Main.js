@@ -403,11 +403,9 @@ function Main({ params }) {
               <h2 className='text-3xl mdx:text-4xl font-bold text-neutral-900 max-md:max-w-full mb-0'>
                 {t('Main.Doctors.title')}
               </h2>
-              <p className='mt-3 text-sm mdx:text-lg text-neutral-400 w-full leading-4'>
-                {t('Main.Doctors.description')}
-              </p>
+             
             </div>
-            <div className='mt-4 max-md:max-w-full'>
+            <div className='mt-4 max-md:max-w-full xl:mt-[40px]'>
               <div className='hidden mdx:grid gap-5 grid-cols-4 max-lg:grid-cols-3 max-slg:grid-cols-2'>
                 {doctors.map((doctor, index) => (
                   <DoctorCard

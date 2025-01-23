@@ -12,7 +12,7 @@ const Data = {
     },
     {
       item: {
-        ru: 'Избегайте употребления жирной пищи за день до анализа.',
+        ru: 'Избегайте употребления жирной пищи за день до сдачи анализа.',
         uz: "Tahlildan bir kun oldin yog'li ovqatlardan saqlaning."
       }
     },

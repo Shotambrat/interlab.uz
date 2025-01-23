@@ -20,12 +20,12 @@ const MainPartners = () => {
   };
 
   return (
-    <div className='w-full flex flex-col gap-48 bg-white pb-48'>
+    <div className='w-full flex flex-col gap-[100px] bg-white pb-48'>
         <Banner onclick={handleShow} />
         <div className='hidden lg:block'>
           <ProccesWork />
         </div>
-        <div className='block lg:hidden'>
+        <div className='block mt-[-120px] lg:hidden'>
         <MobileProccesWork />
           </div>
         <PriceCut />

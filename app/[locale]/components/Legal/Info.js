@@ -9,7 +9,7 @@ export default function Info({ScrollTopApllication}) {
   const locale = useLocale()
 
   return (
-    <div className='max-w-[1440px] lg:mx-auto mt-[300px] mdl:mt-[400px]'>
+    <div className='max-w-[1440px] lg:mx-auto mt-[-100px] mdl:mt-[-100px]'>
       <div className='flex flex-col gap-[100px] mdl:gap-[180px] lg:gap-[200px] px-[16px] mdl:px-[20px]'>
         {/* CARD ONE */}
         <div className='flex flex-col lg:flex-row gap-[25px] lg:gap-0 lg:justify-between'>

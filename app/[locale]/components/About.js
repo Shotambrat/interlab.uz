@@ -1,12 +1,13 @@
 import Image from "next/image";
-import React from "react";
 import { Link } from "@/i18n/routing";
 import { useLocale } from 'next-intl'
 
 
-
 export default function About() {
   const locale = useLocale()
+
+
+
 
   return (
     <div className={`w-full px-2 py-12 bg-[#F8F9FB] `}>
@@ -15,7 +16,7 @@ export default function About() {
           <div className="flex-1 flex items-center">
             <h3 className="text-5xl max-mdx:text-[25px] font-semibold">
               <span className="text-[#FB6A68]">INTERMED - </span>
-              {locale === 'ru' ? 'современный медицинский комплекс в Ташкенте' : 'Toshkentdagi zamonaviy tibbiyot kompleksi'}
+              {locale === 'ru' ? 'современный медицинский центр  в Ташкенте' : 'Toshkentdagi zamonaviy tibbiyot markazi'}
             </h3>
           </div>
           <div className="flex-1">

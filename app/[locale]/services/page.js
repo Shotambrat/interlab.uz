@@ -2,6 +2,8 @@ import ServiceBanner from '@/app/[locale]/components/Services/ServiceBanner'
 import Head from 'next/head'
 import { ServiceFetch } from '@/app/[locale]/components/Services/ServiceFetch';
 
+
+
 export const metadata = {
   title: 'Медицинские услуги в Ташкенте – диагностика, анализы, лечение',
   description: `Медицинский центр INTERMED в Ташкенте предлагает широкий спектр услуг: эндокринология, УЗИ, анализы, неврология и другие направления. Современное оборудование и опытные врачи. Услуги медицинского центра INTERMED – качество, которому доверяют!

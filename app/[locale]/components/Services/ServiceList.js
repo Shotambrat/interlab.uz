@@ -13,16 +13,14 @@ import { DownOutlined } from '@ant-design/icons'
 export default function ServiceList({ services, locale , categoriesProps }) {
   const t = useTranslations()
   const [servicesOpen, setServicesOpen] = useState(false)
-  const [categories, setCategories] = useState([]) // Store category objects, not just strings
-  const [selectedCategory, setSelectedCategory] = useState(null) // Default to "All services"
-  // Generate mobile cat egory options
+  const [categories, setCategories] = useState([]) 
+  const [selectedCategory, setSelectedCategory] = useState(null) 
 
-  console.log('am', categories)
   useEffect(() => {
     if (categoriesProps) {
       setCategories(categoriesProps)
     }
-  }, [categoriesProps]) // Перезапуск при изменении categoriesProps
+  }, [categoriesProps])
 
   const mobileCategory = [
     { value: null, label: t('Services.all') }, // Option for "All services"

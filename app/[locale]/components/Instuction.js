@@ -5,10 +5,7 @@ import DownBlckIcon from '@/public/svg/arrow-right-down-blck.svg'
 import Image from 'next/image'
 import { Transition } from '@headlessui/react'
 import { useState } from 'react'
-import HouseCallSuccess from '@/app/[locale]/components/Modals/HouseCallSuccess'
 import HouseCall from '@/app/[locale]/components/Modals/HouseCall'
-import Link from 'next/link'
-import { useLocale } from 'next-intl'
 
 const Data = [
   {
@@ -26,7 +23,7 @@ const Data = [
       },
       {
         item: {
-          ru: 'Избегайте употребления жирной пищи за день до анализа.',
+          ru: 'Избегайте употребления жирной пищи за день до сдачи анализа.',
           uz: "Tahlildan bir kun oldin yog'li ovqatlardan saqlaning."
         }
       },
@@ -48,8 +45,8 @@ const Data = [
   {
     id: '2',
     title: {
-      ru: 'Анализы крови',
-      uz: 'Qon tahlillari'
+      ru: 'Общий Анализ крови',
+      uz: 'Umumiy qon tahlillari'
     },
     description: [
       {
@@ -60,7 +57,7 @@ const Data = [
       },
       {
         item: {
-          ru: 'Избегайте физической нагрузки за сутки до анализа.',
+          ru: 'Избегайте физической нагрузки за сутки до сдачи анализа.',
           uz: 'Tahlildan bir kun oldin jismoniy yuklamalardan saqlaning.'
         }
       },
@@ -82,8 +79,8 @@ const Data = [
   {
     id: '3',
     title: {
-      ru: 'Анализы мочи',
-      uz: 'Siydik tahlillari'
+      ru: 'Общий Анализ мочи',
+      uz: 'Umumiy siydik tahlillari'
     },
     description: [
       {
@@ -116,8 +113,8 @@ const Data = [
   {
     id: '4',
     title: {
-      ru: 'Анализы фекалий',
-      uz: 'Najas tahlillari'
+      ru: 'Общий анализ кала',
+      uz: 'Umumiy kal tahlili'
     },
     description: [
       {
@@ -246,7 +243,7 @@ export default function Instuction({ locale }) {
         <div className='flex flex-col max-md:max-w-full'>
           <h2 className='text-3xl mdx:text-4xl font-bold text-neutral-900 max-md:max-w-full leading-7 max-w-[467px]'>
             {locale === 'ru'
-              ? 'Инструкции по сдаче анализов'
+              ? 'Инструкция  по сдаче анализов'
               : 'Tahlillarni topshirish bo‘yicha ko‘rsatmalar'}
           </h2>
           <p className=' text-sm mdx:text-lg text-zinc-500 max-md:max-w-full leading-4'>
@@ -295,17 +292,7 @@ export default function Instuction({ locale }) {
           </AccordionItem>
         ))}
 
-        {/* <Link href={`/${locale}/instructions`} className="flex flex-col justify-center py-px text-2xl text-red-400 border-т border-б border-solid border-neutral-200 max-md:max-w-full">
-          <div className="flex gap-3.5 py-7 pr-20 max-md:flex-wrap max-md:pr-5">
-            <span>Посмотреть все</span>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/df01962f1b2f9e82d103d70313443681fbb58f620a1804fe139f6fa84420e8e6?apiKey=e791e0f42eab4556ac944da69358f29b&"
-              className="shrink-0 aspect-square w-[30px]"
-              alt="View all icon"
-            />
-          </div>
-        </Link> */}
+     
       </div>
     </section>
   )
